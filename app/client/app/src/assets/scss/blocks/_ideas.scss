@@ -1,0 +1,167 @@
+/* ideas subclass */
+.card.ideas {
+
+	@include tiny   {  }
+	@include mobile {  }
+	@include narrow {  }
+	@include wide   {  }
+	@include wider  {  }
+	@include widest {  }
+	@include full   { 
+
+		@include span(full);
+	}
+
+	> .card {
+
+		&__header { 
+			@include span(full);
+			float: none; 
+		}	
+		&__body { 
+			@include span(full);
+			float: none; 
+		}
+		&__footer { 
+			display:none;
+			@include span(full);
+			float: none;
+		}
+	
+		@include tiny   { &__header { display: none; } }
+		@include mobile { &__header { display: none; } }
+		@include narrow { &__header { display: none; } }
+		@include wide   { &__header { display: none; } }
+		@include wider  {  
+			&__header { 
+				@include span(first 3 of 12); 
+			}	
+			&__body { 
+				@include span(last 9 of 12); 
+				float: right;  
+			}
+			&__footer { 
+				@include span(last 9 of 12); 
+				clear: right; 
+				float: right; 
+			}
+		}
+		@include widest	{ 
+
+			&__header { 
+				@include span(first 3 of 12); 
+			}	
+			&__body { 
+				@include span(last 9 of 12); 
+				float: right;  
+			}
+			&__footer { 
+				@include span(last 9 of 12); 
+				clear: right; 
+				float: right; 
+			}		
+		}
+		@include full 	{ 
+
+			&__header { 
+				display: none; 
+			}
+			
+			/*&__header { 
+				@include span(first 3 of 18);
+			}	
+			&__body { 
+				@include span(last 12 of 18); 
+				float: right;  
+			}
+			&__footer { 
+				@include span(last 12 of 18); 
+				clear: right; 
+				float: right; 
+			}*/		
+		}
+	}
+}
+
+
+.card.idea {
+
+	@include tiny   {  }
+	@include mobile {  }
+	@include narrow {  }
+	@include wide   {  }
+	/*@include wider  { border: 1px solid $lighter-bd-color; }
+	@include widest { border: 1px solid $lighter-bd-color; }
+	@include full 	{ border: 1px solid $lighter-bd-color; }*/
+
+	.card {
+
+		&__slide {
+
+			@include tiny   {  }
+			@include mobile {  }
+			@include narrow {  }
+			@include wide	{  }
+			@include wider	{ width: span(3 of 9); margin-right: gutter(9); }
+			@include widest	{ width: span(3 of 9); margin-right: gutter(9); }
+			@include full	{ width: span(3 of 9); margin-right: gutter(9); }
+		}
+
+		&__header {}
+
+		&__body { 
+			> .bd { width: span(5 of 6); }
+			/*padding-right: $base-button-height-big;*/
+		}
+		
+		&__footer { 
+			display: none; 
+			@include full	{ display: initial; }
+		}
+
+		@include tiny   {  }
+		@include mobile {  }
+		@include narrow {  }
+		@include wide	{  }
+		@include wider	{  }
+		@include widest	{  
+			&__slide {
+
+				width: span(3 of 9); 
+				margin-right: gutter(9); 
+			}
+			&__header {
+
+			}
+			&__body { 
+
+				> .bd { width: span(5 of 6); }
+			}			
+			&__footer { 
+				 
+			}
+		}
+
+		@include full	{
+
+			
+
+			&__slide {
+
+				width: span(3 of 9); 
+				/*padding: gutter(9) *0.5;*/
+				margin-right: gutter(9); 
+			}
+			&__header {
+
+			}
+			&__body { 
+
+				> .bd { width: span(5 of 6); }
+			}			
+			&__footer { 
+				display: initial; 
+			}
+		}
+	}
+}

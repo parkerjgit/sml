@@ -1,0 +1,117 @@
+/*@mixin card-layout-vert { 
+
+	padding-left: gutter(13);
+	padding-right: gutter(13);
+	clear: left;
+	float: none;
+}*/
+
+/*@mixin card-type-6col { 
+
+	> .card__header { 
+		@include span(first 3 of 18); 
+	}	
+	> .card__body { 
+		@include span(last 12 of 18); 
+		float: right;  
+	}
+	> .card__footer { 
+		@include span(last 12 of 18); 
+		clear: right; 
+		float: right; 
+	}
+}*/
+
+.card.awards {
+
+	.card__header { display: none; }
+
+	@include widest	{ 
+		/*@include card-layout-vert; */
+	} 
+	@include full	{ 		
+		/*@include card-type-6col;*/
+	} 
+}
+
+/* ==================================================================
+## Awards Table subclass
+===================================================================== */
+	
+.awards-table {
+
+	&__table {
+
+		/*@extend .tbl;*/
+	}
+
+		@include tiny {
+			&__head 		{ display: table-row-group; }
+			&__head-date,
+			&__data-date 	{ display: none; }
+			&__head-name,
+			&__data-name	{  }
+			&__head-icon,
+			&__data-icon 	{ width: 11%; }
+		}
+
+		@include mobile {
+			&__head 		{ display: table-row-group; }
+			&__head-date,
+			&__data-date 	{ width: 12%; }
+			&__head-name,
+			&__data-name	{  }
+			&__head-icon,
+			&__data-icon 	{ width: 11%; }
+		}
+
+		@include narrow {
+			&__head 		{ display: table-row-group; }
+			&__head-date,
+			&__data-date 	{ width: 9%; }
+			&__head-name,
+			&__data-name	{  }
+			&__head-icon,
+			&__data-icon 	{ width: 9%; }
+		}
+
+		@include wide {
+			&__head 		{ display: table-row-group; }
+			&__head-date,
+			&__data-date 	{ width: 9%; }
+			&__head-name,
+			&__data-name	{  }
+			&__head-icon,
+			&__data-icon 	{ width: 9%; }
+		}
+
+		@include wider {
+			&__head 		{ display: table-row-group; }
+			&__head-date,
+			&__data-date 	{ width: 6%; }
+			&__head-name,
+			&__data-name	{  }
+			&__head-icon,
+			&__data-icon 	{ width: 6%; }
+		}
+
+		@include widest {
+			&__head 		{ display: table-row-group; }
+			&__head-date,
+			&__data-date 	{ width: 6%; }
+			&__head-name,
+			&__data-name	{  }
+			&__head-icon,
+			&__data-icon 	{ width: 7%; }
+		}
+
+		@include full {
+			&__head 		{ display: table-row-group; }
+			&__head-date,
+			&__data-date 	{ width: 10%; }
+			&__head-name,
+			&__data-name	{  }
+			&__head-icon,
+			&__data-icon 	{ width: 5%; }
+		}
+}

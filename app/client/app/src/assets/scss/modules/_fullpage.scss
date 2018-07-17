@@ -1,0 +1,65 @@
+.fullpage {
+
+	overflow: visible !important; /* ie11 doesn't work if overflow hidden */
+
+	&__asset { /* hide this when not in fullpage mode */
+		/*display: none;*/
+
+	}
+	&__section {
+
+	}
+	/*&__section--horizCenter {
+		text-align: center;
+	}*/
+	&__hidden { /* hide these during fullpage */
+		/*display: none !important;*/
+	}
+	&__pager--up,
+	&__pager--down {
+		position: absolute;
+    	width: 100%;
+	}
+	&__pager--up {
+		top: 0;
+	}
+	&__pager--down {
+    	bottom: 0;
+	}
+	/*&__pager--black {
+		background: rgba(17, 17, 17, 0.9);
+	}
+	&__pager--white {
+		background: rgba(255, 255, 255, 1);
+	}
+	&__pager--orange {
+		background: rgba(235, 97, 0, 0.9);
+	}*/	
+
+	&__toggler {
+
+		cursor:	pointer;
+
+		position: 		absolute;
+	    bottom: 		1.25rem;
+	    right: 			1.25rem; /*gutter(13);*/
+
+	    /*background: white;
+	    opacity: .4;
+	    > i { color: #333; }*/
+
+		/*@include narrow {display: none;}
+	    @include wide {display: none;}
+		@include wider {display: none;}*/
+		@include widest {display: none;}
+		@include full {display: none;}
+	}
+
+	&__toggler.fixed {
+
+		position: 		fixed;
+	    bottom: 		0;
+	    right: 			0; /*gutter(13);*/
+
+	}
+}

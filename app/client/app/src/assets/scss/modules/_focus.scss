@@ -1,0 +1,140 @@
+/* ==================================================================
+ * Focus
+ *
+ * Structure:
+ * 
+ * focus
+ *   focus__block
+ *     focuss__btn
+ *
+ * Notes:
+ *
+ * Requires focus, focus__bg, and focus__btn be defined. If 
+ * you want to omit focus effect on __bg apply class bg--none to it.
+ * focus, focus__bg, and focus__btn do not require parent/child
+ * relation; decendant/anticedant is sufficient.
+ *
+===================================================================== */
+
+/* ==================================================================
+## Config Focus
+===================================================================== */
+
+/* local config - don't change! */
+$block-color: 			$blk-focus-color;
+$block-color-inv: 		$blk-focus-color-inv;
+$button-color: 			$btn-focus-color;
+$button-color-inv: 		$btn-focus-color-inv;
+$hover-color: 			$btn-hover-color;
+$hover-color-inv: 		$btn-hover-color-inv;
+
+/*$link-focus-color*/
+
+/* ==================================================================
+## Def Focus
+===================================================================== */
+
+.focus {}
+
+	.focus {
+
+		&__block:hover,
+		&__block.isfocused {
+
+			background: $blk-focus-color;
+		}
+
+		&__block.card:hover {
+
+			border:none;
+			box-shadow: 0px 8px 8px -9px #555;
+		}
+
+		/*&__block:hover.focus__region {
+
+			background: $blk-focus-color;
+		}*/
+
+		&__block:hover .focus__btn {
+
+			background: $btn-focus-color;
+			/*> i {color: $link-focus-color;}*/
+		}
+
+		&__block .focus__btn:hover {
+
+			background: $btn-focus-hover-color;
+			> i {color: black;}
+			/*> i {color: $link-hover-color;}*/
+		}
+
+		&__block--onfull {
+
+			@include full {
+				background: $blk-focus-color;
+			}
+		}
+
+		&__block--onfull:hover {
+
+			@include full {
+				border:none;
+				box-shadow: 0px 8px 8px -9px #555;
+			}
+		}
+	}
+
+.focus.invert {
+
+	.focus {
+
+		&__block:hover,
+		&__block.isfocused {
+
+			background: $blk-focus-color-inv;
+		}
+
+		&__block.card:hover {
+
+			border:none;
+			box-shadow: 0px 8px 8px -9px black;
+		}
+
+		/*&__block:hover.focus__row {
+
+			background: $blk-focus-color-inv;
+		}*/
+
+		&__block:hover .focus__btn {
+
+			background: $btn-focus-color-inv;
+			/*> i {color: $link-focus-color-inv;}*/
+		}
+
+		&__block .focus__btn:hover {
+
+			/*background: $btn-hover-color-inv;
+			> i {color: $link-hover-color;}*/
+			background: $btn-focus-hover-color-inv;
+			> i {color: white;}
+		}
+
+		&__block--onfull {
+
+			@include full {
+				background: $blk-focus-color-inv;
+			}
+		}
+
+		&__block--onfull:hover {
+
+			@include full {
+				border:none;
+				box-shadow: 0px 8px 8px -9px black;
+			}
+		}
+	}
+}
+
+/* atomic override */
+.bg--none { background: none; }

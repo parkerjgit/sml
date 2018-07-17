@@ -1,0 +1,99 @@
+/* ==================================================================
+ *
+ *
+ * tags
+ *
+ *
+===================================================================== */
+
+/* ==================================================================
+## Config
+===================================================================== */
+
+
+
+$tag-spacing:					0; /*$base-button-spacing;*/
+$tag-button-height:				$base-button-height;
+$tag-button-pad-horiz:			$base-horiz-pad;
+
+/*$tag-row-height:				$base-row-height; */	
+/*$tag-font-color: 				inherit;
+$tag-font-color: 				inherit;*/
+/*$tag-hover-font-color:			$openorange-color; */	
+
+/*$tag-bg-color:					inherit;
+$tag-hover-bg-color:			inherit;*/
+
+$tag-font-size-sml:				$h6-font-size;
+$tag-button-height-sml:			$base-button-height-sml;
+$tag-spacing-sml:				$base-button-spacing;	/* horiz space btw buttons */
+$tag-button-pad-horiz-sml:		$base-button-pad-horiz; 	/* horiz text padding */
+
+/* ==================================================================
+## Tags Component
+===================================================================== */
+
+
+.tag {
+
+	font-size: 				$tag-font-size;
+	color: 					$tag-font-color;
+
+	a, a:link, a:visited{
+
+		display: 			inline-block;
+		height: 			$tag-button-height;
+		line-height: 		$tag-button-height;
+		margin-right: 		$tag-spacing;			/* horiz space btw buttons */
+		padding: 			0 $tag-button-pad-horiz; 	/* horiz text padding */
+		
+		text-transform: 	uppercase;
+		text-decoration:	none;
+		/*background:			$tag-bg-color;*/		
+	}
+
+	/*a:hover{
+		text-decoration: 	none;
+		color: 				$tag-hover-font-color;
+		background: 		$tag-hover-bg-color;
+	}*/
+}
+
+.tag.invert {
+	color: 					$tag-font-color-inv;
+}
+
+.tag--sml {
+
+	font-size: 				$tag-font-size-sml;
+
+	a, a:link, a:visited{
+		height: 			$tag-button-height-sml;
+		line-height: 		$tag-button-height-sml;
+		margin-right: 		$tag-spacing-sml;			/* horiz space btw buttons */
+		padding: 			0 $tag-button-pad-horiz-sml; 	/* horiz text padding */	
+	}
+
+}
+
+
+$btn-height:			$base-button-height;
+$btn-padding:			$base-horiz-pad;
+$btn-spacing:			$base-button-spacing;
+
+.btn { /*a*/
+
+		display: 			inline-block;
+		height: 			$btn-height;
+		line-height: 		$btn-height;
+		min-width:			$btn-height;
+		margin-right: 		$btn-spacing;		/* horiz space btw buttons */
+		padding: 			0 $btn-padding; 	/* horiz text padding */
+
+}
+
+.btn--sml {}
+.btn--big {}
+
+
+

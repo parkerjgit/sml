@@ -1,0 +1,40 @@
+/* ==================================================================
+ * Sitename
+ *
+ * div.sitename
+ *   a
+ *     img
+===================================================================== */
+
+/* ==================================================================
+## Config
+===================================================================== */
+
+$tiny-logo: 	$logo-height-tiny;
+$mobile-logo: 	$logo-height-mobile;
+$narrow-logo: 	$logo-height-narrow;
+$wide-logo: 	$logo-height-wide;
+$wider-logo: 	$logo-height-wider;
+$widest-logo: 	$logo-height-widest;
+$full-logo: 	$logo-height-full;
+
+/* ==================================================================
+## Def
+===================================================================== */
+
+.sitename {
+
+	img {
+		
+		width: auto;
+		vertical-align: middle;
+
+		@include tiny 	{ height: $tiny-logo; }
+		@include mobile { height: $mobile-logo; }
+		@include narrow { height: $narrow-logo; }
+		@include wide 	{ height: $wide-logo; }
+		@include wider 	{ height: $wider-logo; }
+		@include widest { height: $widest-logo; }
+		@include full 	{ height: $full-logo; }
+	}
+}

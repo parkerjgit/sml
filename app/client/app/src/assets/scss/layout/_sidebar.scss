@@ -1,0 +1,143 @@
+/* ==================================================================
+ *
+ * sidebar
+ *
+ * sidebar should fill its container ie width/height should be 100%
+ * so don't change width/height. let layout control that with 
+ * sidebar-wrapper. prefer to let 
+ *
+===================================================================== */
+
+/* ==================================================================
+## Config
+===================================================================== */
+
+$sidebar-base-font-size:	1rem;
+$sidebar-header-height:		$base-row1-height;
+$sidebar-footer-height: 	$base-row2-height;
+
+/* ==================================================================
+## Layout asdf
+===================================================================== */
+
+.sidebar-wrapper {
+
+	height: 100%;
+
+	> .sidebar {
+
+		/*font-size: 				$sidebar-base-font-size;*/
+		/*line-height: 			$sidebar-header-height;*/
+		/*border-right: 			1px solid $sidebar-vbd-color;*/
+
+		.sidebar__top {
+
+			line-height: 		$sidebar-header-height;	
+			height: 			$sidebar-header-height;
+		}
+
+		.sidebar__middle {
+
+			/*padding-bottom:		$sidebar-footer-height;*/
+			padding-top:	$base-row1-height * 3;
+			padding-bottom:	$base-row1-height * 3; /* - $base-row2-height*/;
+		}
+
+		.sidebar__bottom {
+
+			height: 			$sidebar-footer-height;
+			line-height: 		$sidebar-footer-height;
+			/*padding:			0 10%;*/
+
+			/*@include tiny 	{ 	padding: 0 8%; }
+			@include mobile { 	padding: 0 8%; }
+			@include full 	{ 	padding: 0 gutter(3.5 1) * 0.5; }*/
+		}
+	}
+}
+
+
+/* wrapper for sidebar regions */
+.sidebar {
+
+	width:					100%;	/* 100% of sidebar-wrapper */
+	height:					100%;
+	position:				relative;
+
+	border-right: 			1px solid $sidebar-vbd-color;
+
+	@include full {
+		background: #f3f3f3;
+		border-right: none;
+	}
+
+	&__top{
+		
+		font-size:		1rem;		/* need this to control searchbar region height */
+		position:		absolute;
+		top:			0;
+		left:			0;
+		width:			100%;
+	}
+
+	&__middle{
+
+		height: 100%;
+		overflow-y: auto;
+	}
+
+	/* hide scrollbar on sidebar */
+	&__middle::-webkit-scrollbar {
+
+    	width: 0;
+	}
+
+	&__bottom{
+
+		position:		absolute;
+		left:			0;
+		bottom:			0;
+		width:			100%;
+
+		background: $base-bg-color;
+		@include full {
+			background: #f3f3f3;
+		}
+	}
+	
+}
+
+.sidebar-wrapper > .sidebar.invert {
+
+	border-right: 1px solid $sidebar-vbd-color-inv;
+
+	@include full {
+		background: none;
+	}
+
+	.sidebar__bottom{
+
+		background: $base-bg-color-inv;
+		/*@include full {
+			background: $base-bg-color-inv;
+		}*/
+	}
+}
+
+	
+/* ==================================================================
+## Debug
+===================================================================== */	
+
+/*.sidebar {
+
+	border: 1px solid red;	
+	
+	&__header 		{	background: #f5f5f5;	}
+	&__primary		{	background: #e5e5e5;	}
+	&__secondary 	{	background: lightgrey;	}
+
+}*/
+
+
+

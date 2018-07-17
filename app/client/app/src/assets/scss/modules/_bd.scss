@@ -1,0 +1,105 @@
+/* ==================================================================
+ * Bd Class
+ *
+ * Structure:
+ * 
+ * div.bd
+ *   p
+ *
+ * div.bd.bd--big
+ *   p
+ *
+ * Notes:
+ *
+ * xxx
+ *
+===================================================================== */
+
+/* ==================================================================
+## Config
+===================================================================== */
+	
+$def-font-size:			$bd-def-font-size;
+$sml-font-size:			$bd-sml-font-size;
+$big-font-size:			$bd-big-font-size;
+$big-font-size-tiny: 	$body-font-size;
+$big-font-size-mobile: 	$bd-big-font-size-minus;
+$big-font-size-narrow: 	$bd-big-font-size;
+$big-font-size-wide: 	$bd-big-font-size;
+$big-font-size-wider: 	$bd-big-font-size;
+$big-font-size-widest: 	$bd-big-font-size-plus;
+$big-font-size-full: 	$bd-big-font-size-plus;
+
+/* ==================================================================
+## Def 
+===================================================================== */
+
+.bd {
+
+	/*text-align:			justify;*/
+	/*max-height: 		15em;*/ /* 10 (lines) x 1.5 (line-height) */
+
+	> p,
+	~ .morelink {
+
+		font-size:		$def-font-size;
+	}
+
+}
+
+.bd--bigtext {
+
+	> p,
+	~ .morelink  {
+
+		font-size:			$big-font-size;
+		line-height:		1.6;
+		margin: 			$base-spacing;
+
+		@include tiny 	{ 	font-size: $big-font-size-tiny; 	}
+		@include mobile { 	font-size: $big-font-size-mobile; 	}
+		@include narrow { 	font-size: $big-font-size-narrow; 	}
+		@include wide 	{ 	font-size: $big-font-size-wide; 	}
+		@include wider 	{ 	font-size: $big-font-size-wider; 	}
+		@include widest { 	font-size: $big-font-size-widest; /*color: white;*/ }
+		@include full 	{ 	font-size: $big-font-size-full; /*color: white; */}
+	}
+}
+
+.bd--smltext {
+
+	> p,
+	~ .morelink {
+
+		font-size: 			$sml-font-size;
+		line-height: 		1.25rem;
+	}
+}
+
+.bd--expandable {
+
+	/*display: block;
+	width: 100%;*/
+
+	/*max-height: 100px;*/
+
+	/* root font sizes */
+	/*$root-font-size: 			16px;
+	$root-font-size-tiny: 		12px;
+	$root-font-size-mobile: 	13px;
+	$root-font-size-narrow: 	14px;
+	$root-font-size-wide: 		14px;
+	$root-font-size-wider: 		15px;
+	$root-font-size-widest: 	15px;
+	$root-font-size-full: 		17px;*/
+
+	/* 1.33 * numLines */
+
+	@include tiny 	{ max-height: 8.0em; } /*6.75em;*/ 
+	@include mobile { max-height: 10.55em; } /*8.0em;*/
+	@include narrow { max-height: 10.55em; }
+	@include wide 	{ max-height: 9.25em; }
+	@include wider 	{ max-height: 9.55em; }
+	@include widest { max-height: 9.55em; }
+	@include full 	{ max-height: 9.33em; }
+}

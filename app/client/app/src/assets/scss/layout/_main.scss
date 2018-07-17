@@ -1,0 +1,147 @@
+/* ==================================================================
+ *
+ * main
+ *
+ * 
+ *
+===================================================================== */
+
+/* ==================================================================
+## Config
+===================================================================== */
+
+$main-base-font-size:		1rem;
+
+$susy-grid-9col: (
+  gutter-position: before,
+  columns: 13,
+  gutters: 1
+);
+
+$susy-grid-12col: (
+  gutter-position: before,
+  columns: 13,
+  gutters: 1
+);
+
+/* ==================================================================
+## Layout
+===================================================================== */
+
+.main-content-wrapper {
+
+	/*padding-top:200px;
+	padding-bottom:140px;*/
+
+	/* flex main to fill vertical space for sticky footer */
+	flex: 1;
+
+	/*@include layout($susy);*/
+	@include layout((
+		gutter-position: 	before,
+		columns: 			12, 
+		gutters: 			1,
+		global-box-sizing: 	border-box,
+		debug: (
+		    image: show-columns,
+		    color: rgba(#AEEFF2, .15),
+		    output: overlay,
+		    toggle: top right,
+	    )
+	));
+}
+
+
+
+.main-content { /*region*/
+
+	font-size: 				$main-base-font-size;
+
+	> * { 
+		clear: left; 
+		overflow: hidden; /* is this necessary ???? */
+	}
+
+	/*@include ie-10-11-only {
+		> * {
+			overflow: visible;
+		}
+	}*/
+
+
+	&__buffer { padding: 0 gutter(13); }
+	&__header { padding: 0 gutter(13); }
+	/*&__gallery { padding: 0 gutter(13); }*/
+	&__slideshow { padding: 0; }
+	&__primary { padding: 0 gutter(13); }
+	&__relations { padding: 0 gutter(13); }
+	&__facts { padding: 0 gutter(13); }
+
+	/* bleed videos and correct header */
+	@include tiny 	{ &__primary { .videos { margin: 0 gutter(13)*-1 0 gutter(13)*-1; } .videos .card__header { padding: 0 gutter(13); } } }
+	@include mobile { &__primary { .videos { margin: 0 gutter(13)*-1 0 gutter(13)*-1; } .videos .card__header { padding: 0 gutter(13); } } }
+	@include narrow { &__primary { .videos { margin: 0 gutter(13)*-1 0 gutter(13)*-1; } .videos .card__header { padding: 0 gutter(13); } } }
+
+	@include wide {
+
+		&__buffer { padding: 0 gutter(10); }
+		&__header { padding: 0 gutter(10); }
+		&__slideshow { padding: 0; /* margin: 0 gutter(10); */ }
+		&__primary { padding: 0 gutter(10); }
+		&__relations { padding: 0 gutter(10); }
+		&__facts { padding: 0 gutter(10); }
+	}
+
+	@include wider {
+
+		/*&__slideshow { @include span(9 of 12); }
+		&__primary { @include span(9 of 12); }
+		&__relations { @include span(9 of 12); }
+		&__facts { @include span(9 of 12); }*/
+
+		&__buffer { padding: 0 gutter(13); }
+		&__header { padding: 0 gutter(13); }
+		&__slideshow { padding: 0; /*padding: 0 gutter(13);*/ }
+		&__primary { padding: 0 gutter(13); }
+		&__relations { padding: 0 gutter(13); }
+		&__facts { padding: 0 gutter(13); }
+	}
+
+	@include widest {
+
+		&__buffer 		{ padding: 0; margin: 0 span(3 of 19 wide); /*padding: 0 gutter(19);*/ }
+		&__header 		{ padding: 0; margin: 0 span(3 of 19 wide); /*padding: 0 gutter(19);*/ }
+		/*&__gallery		{ margin: 0 gutter(13 1/2); }*/
+		&__slideshow 	{ padding: 0; margin: 0 span(3 of 19 wide); /*gutter(19);*/ /*background: #333;*/ /*overflow:hidden;*/}
+		&__primary 		{ padding: 0; margin: 0 span(3 of 19 wide); /*padding: 0 gutter(19);*//*@include span(isolate 8 at 3 of 12); clear: left;*/ }
+		&__relations 	{ /*clear: left;*/ padding: 0; margin: 0 span(3 of 19 wide); /*padding: 0 gutter(19);*/ /*background: url('../images/ptgrid-4px-50pct.png');*/ /*@include span(isolate 8 at 3 of 12); clear: left;*/ }
+		&__facts 		{ /*clear: left;*/ padding: 0; margin: 0 span(3 of 19 wide); /*padding: 0 gutter(19);*/ /*@include span(isolate 8 at 3 of 12); clear: left;*/ }
+	}
+
+	@include full {
+
+		&__buffer 		{ padding: 0 gutter(19); }
+		&__header 		{ padding: 0 gutter(19); }
+		/*&__gallery		{ margin: 0 gutter(13 1/2); }*/
+		&__slideshow 	{ padding: 0; /*background: #333;*/ /*overflow:hidden;*/}
+		&__primary 		{ padding: 0 gutter(19);/*@include span(isolate 8 at 3 of 12); clear: left;*/ }
+		&__relations 	{ /*clear: left;*/ margin: 0; padding: 0 gutter(19); /*background: url('../images/ptgrid-4px-50pct.png');*/ /*@include span(isolate 8 at 3 of 12); clear: left;*/ }
+		&__facts 		{ /*clear: left;*/ margin: 0; padding: 0 gutter(19); /*@include span(isolate 8 at 3 of 12); clear: left;*/ }
+	}
+
+}
+
+
+/* ==================================================================
+## Debug
+===================================================================== */	
+
+/*.menubar {
+
+	border: 1px solid red;	
+	
+	&__header 		{	background: #f5f5f5;	}
+	&__primary		{	background: #e5e5e5;	}
+	&__secondary 	{	background: lightgrey;	}
+
+}*/

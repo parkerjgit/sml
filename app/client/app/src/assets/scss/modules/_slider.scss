@@ -1,0 +1,253 @@
+.visor,
+.visor-content {
+
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+
+.visor.up,
+.visor-content.up {
+
+	-webkit-transform: translateY(-105%);
+	transform: translateY(-105%);
+}
+
+.slider {
+
+	.slider-toggler {
+		
+		cursor:	pointer;
+	}
+
+	> .slider-screen {
+		z-index:			1500;
+		position: 			fixed;
+		top:				0;
+		left:				0;
+		width:				100%;
+		height:  			100vh;
+		pointer-events:  	none;
+	}
+
+	> .slider-drawer {
+
+		-webkit-transition: width .3s, margin-left .3s, transform .3s;
+		transition: width .3s, margin-left .3s, transform .3s;
+
+		@include tiny {
+			width: span(9 of 13 wide);
+			-webkit-transform: translateX(-100%);
+			transform: translateX(-100%);			
+		}
+		@include mobile {
+			width: span(6 of 13 wide);
+			-webkit-transform: translateX(-100%);
+			transform: translateX(-100%);
+		}
+		@include narrow {
+			width: span(4 of 13 wide);
+			-webkit-transform: translateX(-100%);
+			transform: translateX(-100%);
+		}
+		@include wide {
+			-webkit-transition: transform 0s;
+			transition: transform 0s;
+			width: span(3 of 13 wide);
+			-webkit-transform: translateX(0);
+			transform: translateX(0);
+		}
+		@include wider {
+			-webkit-transition: transform 0s;
+			transition: transform 0s;
+			width: span(3 of 16 wide);
+			-webkit-transform: translateX(0);
+			transform: translateX(0);
+		}
+		@include widest {
+			width: span(3 of 19 wide);
+			-webkit-transform: translateX(0);
+			transform: translateX(0);
+		}
+		@include full {
+			width: span(6 of 19 wide);
+			-webkit-transform: translateX(-100%);
+			transform: translateX(-100%);
+		}
+	}
+
+	> .slider-canvas {
+
+		-webkit-transition: transform .3s;
+		transition: transform .3s;
+
+		@include full {
+			-webkit-transition: width .3s, margin-left .3s, transform .3s;
+			transition: width .3s, margin-left .3s, transform .3s;
+		}
+
+		@include tiny {
+			margin-left: 0;
+			width:	100%;
+		}
+		@include mobile {
+			margin-left: 0;
+			width:	100%;
+		}
+		@include narrow {
+			margin-left: 0;
+			width:	100%;
+		}
+		@include wide {
+			margin-left: span(3 of 13 wide);
+			width: span(10 of 13);
+		}
+		@include wider {
+			margin-left: span(3 of 16 wide);
+			width: span(13 of 16);
+		}
+		@include widest {
+			margin-left: 0;
+			width: 100%;
+		}
+		@include full {
+			margin-left: 0;
+			width: 100%;
+		}	
+	}
+
+	> .slider-canvas.main-header-layout,
+	.main-content__header {
+
+		@include full {
+
+			margin-left: 0;
+			width:	100%;
+		}
+	}
+
+	/*.projects-table {
+		@include full	{ 	
+			margin-left: span(6 of 19 wide);
+			width: span(13 of 19);
+		} 
+	}*/
+}
+
+/*.slider {
+	.card.jobs {
+
+	}
+}
+.slider.close {
+	.card.jobs {
+		@include full {
+
+		}
+	}
+}
+.slider.open {
+	.card.jobs {
+		@include full {
+
+		}
+	}
+}*/
+
+.slider.close {
+
+	> .slider-screen {
+		
+		pointer-events: none;
+	}
+
+	> .slider-drawer {
+
+		-webkit-transform: translateX(-100%);
+		transform: translateX(-100%);
+
+	}
+
+	> .slider-canvas {
+
+		margin-left: 0;
+		width:	100%;
+	}
+
+
+
+	> .slider-canvas.main-header-layout,
+	.main-content__header {
+
+		@include full {
+
+			margin-left: 0;
+			width:	100%;
+		}
+	}
+
+	/*.projects-table {
+		@include full	{ 	
+			margin-left: 0;
+			width:	100%;
+		} 
+	}*/
+}
+
+.slider.open {
+
+	> .slider-screen {
+
+		@include tiny 	{ pointer-events: all; }
+		@include mobile { pointer-events: all; }
+		@include narrow { pointer-events: all; }
+		
+	}
+
+	> .slider-drawer { 
+
+		-webkit-transform: translateX(0);
+	  	transform: translateX(0);
+
+	}
+
+	> .slider-canvas {
+
+		@include tiny {
+			margin-left: 0;
+			width: 100%;
+		}
+		@include mobile {
+			margin-left: 0;
+			width: 100%;
+		}
+		@include narrow {
+			margin-left: 0;
+			width: 100%;
+		}
+		@include wide {
+			margin-left: span(3 of 13 wide);
+			width: span(10 of 13);
+		}
+		@include wider {
+			margin-left: span(3 of 16 wide);
+			width: span(13 of 16);
+		}
+		@include widest {
+			margin-left: 0;
+			width: 100%;
+		}
+		@include full {
+			margin-left: 0;
+			width: 100%;
+		}
+	}
+
+	> .slider-canvas.main-header-layout,
+	.main-content__header {
+
+		@include full {
+			margin-left: span(6 of 19 wide);
+			width: span(13 of 19);
+		}
+	}
+}

@@ -1,0 +1,74 @@
+/* ==================================================================
+ *
+ *
+ * statement (manifesto)
+ *
+ *
+===================================================================== */
+
+
+/* ==================================================================
+## Config
+===================================================================== */	
+/*
+$statement-base-font-size:		1rem;
+
+
+$statement-body-font-size:		1em;
+$statement-body-line-height:	1.7;
+$statement-body-font-color:		$base-body-font-color;*/
+
+
+/* ==================================================================
+## Layout
+===================================================================== */
+
+/*.statement {}
+
+	.statement__title 	{	margin: $base-row-pad 0;	}
+	.statement__body p	{	margin: $base-row-pad $base-row-pad;	}
+	.statement__more 	{	margin-top: $base-row-pad*2;	}*/
+
+
+/* ==================================================================
+## Typography Overrides
+===================================================================== */
+
+/*.statement {
+
+	font-size: 			$statement-base-font-size;
+
+
+	&__title h2 { 
+
+
+	}
+
+	&__body > p {
+
+
+		font-size: 		$statement-body-font-size;
+		line-height: 	$statement-body-line-height;
+		color: 			$statement-body-font-color;
+		text-align:		justify;
+	}
+
+	&__tags {
+
+
+	}
+}*/
+
+
+/* ==================================================================
+## Debug
+===================================================================== */	
+
+/*.statement {
+
+	&__slide	{	border: 1px solid red;	}	
+	&__title 	{	background: #e5e5e5;	}
+	&__body p	{	background: #e5e5e5;	}
+	&__more 	{	background: lightgrey;	}
+
+}*/

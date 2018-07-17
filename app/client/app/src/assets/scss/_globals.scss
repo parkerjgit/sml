@@ -1,0 +1,148 @@
+/* =======================================================================
+## ++ Globals
+========================================================================== */
+
+html {
+
+	height:100%;  /* req for flexbox, ie sticky footer */
+	font-size: $root-font-size;
+
+	@include tiny{ /* max-width: 559px */
+    	font-size: $root-font-size-tiny;
+    }
+	@include mobile{ /* max-width: 559px */
+    	font-size: $root-font-size-mobile;
+    }
+    @include narrow{ /* all and (min-width: 560px) and (max-width: 850px) */
+    	font-size: $root-font-size-narrow;
+    }
+    @include wide{ /* all and (min-width: 851px) */
+    	font-size: $root-font-size-wide;
+    }
+    @include wider{ /* all and (min-width: 851px) */
+    	font-size: $root-font-size-wider;
+    }
+    @include widest{ /* all and (min-width: 851px) */
+    	font-size: $root-font-size-widest;
+    }
+    @include full{ /* all and (min-width: 851px) */
+    	font-size: $root-font-size-full;
+    }
+
+    /* prevent zoom-in effect on ios */
+    /*-webkit-text-size-adjust: none;*/
+
+    /* if still issues with zooming try this */
+    -webkit-text-size-adjust: 100%;
+  	-moz-text-size-adjust: none;
+  	-ms-text-size-adjust: 100%;
+}
+
+body {
+	height:100%;  /* req for flexbox, ie sticky footer */
+	background: $base-bg-color;
+	color: $body-font-color;	
+    -webkit-font-smoothing: antialiased;
+    font-family: $base-font-family;
+}
+
+body.invert {
+	background: $base-bg-color-inv;
+	color: $body-font-color-inv;
+}
+
+*, *:before, *:after{
+	padding: 0;
+	margin: 0;
+    box-sizing:border-box;
+}
+
+/* only apply font-size and line-height to 
+elements so don't have issue w/ cascading sizes */
+p,
+.morelink {
+	font-size: 		$base-font-size; 
+	line-height: 	$base-line-height;
+	/*padding: 		0 $base-pad-horiz;*/	
+	margin: 		$base-row-pad 0;
+	/*text-align:		justify;*/	
+}
+
+p:first-child,
+p:last-child {
+	margin: 0;
+}
+
+li {
+	/*line-height: 	$base-line-height;*/
+}
+
+span {
+	/* only use for local styling */
+}
+
+h1,h2,h3,h4 {
+	line-height: 	$base-line-height-title;
+	/*text-transform: uppercase;*/
+}
+
+h1 {	font-size: 	$h1-font-size;		}
+h2 {	font-size: 	$h2-font-size;	/*line-height: $base-line-height-single;*/ } /* task/event titles */
+h3 {	font-size: 	$h3-font-size;		}
+h4 {	font-size: 	$h4-font-size;		}
+h5 {	font-size: 	$h5-font-size;	line-height: $base-line-height; } /* coverage items $base-line-height-dbl = $base-button-height-sml = 2rem so wraping lines don't collapse*/
+h6 {	font-size:	$h6-font-size;	line-height: $base-line-height; } /* facts */
+
+a, a:link, a:visited {
+	color: 				inherit;
+	text-decoration:	none;
+}
+
+a:hover{
+	color:				$link-hover-color;
+}
+
+button {
+    border: none;
+    color: inherit;
+}
+
+/* responsive images */
+img {
+	/*display: block;*/ /* remove gap at bottom of image but causes problems so commented out */
+	width:100%;
+	height:auto;
+}
+
+/* highlight search results */
+strong {
+    background: #555;
+    color: white;
+}
+
+/* =======================================================================
+## ++ Cleafix
+========================================================================== */
+
+/* float clearing for IE6 */
+* html .clearfix{
+ height: 1%;
+ overflow: visible;
+}
+
+/* float clearing for IE7 */
+* + html .clearfix{
+ min-height: 1%;
+}
+
+/* float clearing for everyone else */
+.clearfix:after{
+ clear: both;
+ content: ".";
+ display: block;
+ height: 0;
+ visibility: hidden;
+ font-size: 0;
+}
+
+.clr{clear:both;}

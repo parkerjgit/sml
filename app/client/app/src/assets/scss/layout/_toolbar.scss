@@ -1,0 +1,175 @@
+/* ==================================================================
+ *
+ * Toolbar
+ *
+ * Toolbar is a layout class - it is concerned with setting 
+ * font-size, relative fixed height, and width of toolbar within
+ * region.
+ *
+===================================================================== */
+
+/* ==================================================================
+## Config
+===================================================================== */
+
+/*$toolbar-base-font-size:	$h4-font-size;*/
+/*$toolbar-height:			$tbar-height;*/
+
+/* ==================================================================
+## Layout
+===================================================================== */
+
+.toolbar-wrapper {
+ 	
+	/*pointer-events: 	none;*/
+
+	/*.ribbon__segment,*/
+	/*a { 		
+		pointer-events: visible; 
+	}*/
+
+	/*@include ie-10-11-only {
+
+		a { pointer-events: none; }
+
+		.ribbon__segment.right { 		
+			pointer-events: auto; 
+		}
+	}*/
+
+	@include widest	{ 
+		padding-left: gutter(13);
+		padding-right: gutter(13);
+		clear: left;
+		float: none;  
+	} 
+}
+
+.toolbar {
+
+	font-size: 			$tbar-font-size;
+	position:			relative;
+	height:				0;
+}
+
+	.toolbar-contents,
+	.toolbar-toggle,
+	.toolbar-header {
+
+		/* clearfix to prevent header region collapse w/out overflow hidden b/c that would clip dropdown menu */
+		@include clearfix;
+	
+		position:			absolute;
+		top:				-$tbar-height;
+		width:				100%;	
+		height: 			$tbar-height;
+		line-height: 		$tbar-height;
+
+	}
+
+	.toolbar-header {
+
+		top: -$tbar-height;
+
+		/*border-top: 1px solid $tbar-bd-color;*/
+		/*border-bottom: 1px solid $tbar-bd-color;*/
+	}
+
+	.toolbar-contents {
+
+		top: -$tbar-height;
+
+		border-top: 1px solid $tbar-bd-color;
+		/*border-bottom: 1px solid $tbar-bd-color;*/
+
+		.views-exposed-form {
+
+			font-size: inherit; /* inherit from toolbar */ /*$tbar-font-size;*/
+
+			display: inline-block; 
+			vertical-align: middle;
+
+			/*margin: $base-row-pad 0;*/
+
+			.form-item {
+				line-height: 1.95rem; /*$base-button-height;*/
+				float: left;
+			}
+
+			label {
+				/*display: none;*/
+				vertical-align: middle;
+			}
+
+			.form-select { /*select*/
+				border: none;
+
+				&:option {
+					text-transform: uppercase;
+				}
+			}
+
+			
+			.form-submit { /*input*/
+				display: none;
+			}
+
+			option {
+				height: $base-button-height;
+				line-height: $base-button-height;
+			}
+		}
+	}
+
+	.toolbar-toggle{
+
+		top: -$tbar-height;
+
+		border-bottom: 1px solid $tbar-bd-color;
+	}
+
+	.toolbar-toggle.below {
+		top: 0;
+		border-bottom: 0;
+		border-top: 1px solid $tbar-bd-color;
+	}
+
+.toolbar.invert {
+
+	.toolbar-contents {
+
+		border-top: 1px solid $tbar-bd-color-inv;
+		/*border-bottom: 1px solid $tbar-bd-color-inv;*/
+	}
+
+	.toolbar-toggle{
+
+		border-bottom: 1px solid $tbar-bd-color-inv;
+	}
+}
+
+
+/* ==================================================================
+## Type
+===================================================================== */
+
+/*.toolbar {
+
+	h1, h2, h3, p, span, a, a:link, a:visited {
+		font-size: $toolbar-font-size;
+		font-weight: heavy;
+		line-height: $pagetitle-line-height;
+		color: $pagetitle-font-color;
+		text-transform: uppercase;
+		text-decoration:none;
+	}
+
+	a:hover{
+
+		text-decoration: underline;
+	}
+}*/
+
+/* ==================================================================
+## Debug
+===================================================================== */

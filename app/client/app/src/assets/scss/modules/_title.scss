@@ -1,0 +1,83 @@
+/*
+
+this is a temp partial for card components with vertical stacked 
+layouts
+
+*/
+
+/* ==================================================================
+## Config
+===================================================================== */	
+
+
+/* ==================================================================
+## fixed height titlebar
+===================================================================== */
+
+/*
+ * div.title
+ *   hx
+ *
+ */
+
+.title {
+
+	color: $title-font-color;	
+}
+
+.title.invert {
+
+	color: $title-font-color-inv;	
+}
+
+.title--primary {
+
+	text-transform: 	uppercase;
+}
+
+.title--secondary { 
+
+	text-transform: 	uppercase;
+}
+
+.title--headline {
+
+	text-decoration: 	underline;
+	text-transform: 	uppercase;
+}
+
+.title--bold {
+
+	text-transform: 	uppercase;
+	font-weight: bold;
+}
+
+.ttitle {
+
+	font-size: $tbl-font-size;
+
+	@include tiny {}
+	@include mobile {}
+	@include narrow {}
+	@include wide {}
+	@include wider {}
+	@include widest {}
+	@include full {}
+}
+
+/* atomic modifiers for titles */
+.tt--u { text-transform: uppercase; }
+.td--u { text-decoration: underline; }
+.fw--b { font-weight: bold }
+
+
+
+/*$card-body-font-size--big:		1.2em;
+$card-body-line-height--big:	1.7;*/
+
+
+/*.mm {}
+.mm--thumb {}
+.mm--slideshow {}
+.mm--video {}*/
+

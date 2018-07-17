@@ -1,0 +1,194 @@
+
+.card.projects-table {
+
+	.card__header { display: none; }
+	
+}
+
+/* ==================================================================
+## Projects Table subclass
+===================================================================== */
+
+.projects-table {
+
+	&__header {
+		.ribbon {
+			/*@include tiny {
+				height: 		$base-row2-height;
+				line-height:  	$base-row2-height;
+			}
+			@include mobile {
+				height: 		$base-row2-height;
+				line-height:  	$base-row2-height;
+			}*/
+		}
+	}
+
+	&__table{}
+
+		@include tiny {
+			&__head				{ display: table-row-group; }
+			&__head-year,
+			&__data-year 		{ width: 12%; }
+			&__head-city,
+			&__data-city 		{ display: none; }
+			&__head-size,
+			&__data-size 		{ display: none; }
+			&__head-type,
+			&__data-type 		{ display: none; }
+			&__head-program,
+			&__data-program 	{ display: none; }
+			&__head-name,
+			&__data-name 		{ /**/ }
+			&__head-icon,
+			&__data-icon 		{ /*display: none;*/ }
+		}
+
+		@include mobile {
+			&__head				{ display: table-row-group; }
+			&__head-year,
+			&__data-year 		{ width: 12%;	}
+			&__head-city,
+			&__data-city 		{ display: none; }
+			&__head-size,
+			&__data-size 		{ display: none; }
+			&__head-type,
+			&__data-type 		{ display: none; }
+			&__head-program,
+			&__data-program 	{ display: none; }
+			&__head-name,
+			&__data-name 		{ /**/ }
+			&__head-icon,
+			&__data-icon 		{ /*width: 10%;*/ }
+		}
+
+		@include narrow {
+			&__head				{ display: table-row-group; }
+			&__head-year,
+			&__data-year 		{ width: 9%;	}
+			&__head-city,
+			&__data-city 		{ display: none; }
+			&__head-size,
+			&__data-size 		{ display: none; }
+			&__head-type,
+			&__data-type 		{ display: none; }
+			&__head-program,
+			&__data-program 	{ display: none; }
+			&__head-name,
+			&__data-name 		{ /**/ }
+			&__head-icon,
+			&__data-icon 		{ /*width: 10%;*/ }
+		}
+
+		@include wide {
+			&__head				{ display: table-row-group; }
+			&__head-year,
+			&__data-year 		{ width: 9%;	}
+			&__head-city,
+			&__data-city 		{ display: none; }
+			&__head-size,
+			&__data-size 		{ display: none; }
+			&__head-type,
+			&__data-type 		{ display: none; }
+			&__head-program,
+			&__data-program 	{ display: none; }
+			&__head-name,
+			&__data-name 		{ /**/ }
+			&__head-icon,
+			&__data-icon 		{ /*width: 8%;*/ }
+		}
+
+		@include wider {
+			&__head				{ display: table-row-group; }
+			&__head-year,
+			&__data-year 		{ width: 6%;	}
+			&__head-city,
+			&__data-city 		{ width: 12%; }
+			&__head-size,
+			&__data-size 		{ display: none; }
+			&__head-type,
+			&__data-type 		{ width: 16%; }
+			&__head-program,
+			&__data-program 	{ width: 16%; }
+			&__head-name,
+			&__data-name 		{ /**/ }
+			&__head-icon,
+			&__data-icon 		{/* width: 5%;*/ }
+		}
+
+		@include widest {
+			&__head				{ display: table-row-group; }
+			&__head-year,
+			&__data-year 		{ width: 6%;	}
+			&__head-city,
+			&__data-city 		{ width: 12%; }
+			&__head-size,
+			&__data-size 		{ display: none; }
+			&__head-type,
+			&__data-type 		{ width: 16%; }
+			&__head-program,
+			&__data-program 	{ width: 16%; }
+			&__head-name,
+			&__data-name 		{ /**/ }
+			&__head-icon,
+			&__data-icon 		{ /*width: 5%;*/ }
+		}
+
+		@include full {
+			&__head				{ display: table-row-group; }
+			&__head-year,
+			&__data-year 		{ width: 12%; }
+			&__head-city,
+			&__data-city 		{ width: 12%; }
+			&__head-size,
+			&__data-size 		{ width: 12%; }
+			&__head-type,
+			&__data-type 		{ width: 12% }
+			&__head-program,
+			&__data-program 	{ width: 12%; }
+			&__head-name,
+			&__data-name 		{ /**/ }
+			&__head-icon,
+			&__data-icon 		{ /*width: 3%;*/ }
+		}
+
+		/*@include full {*/
+
+			&__data-name .icon,
+			&__data-name .label { /* both */
+				/*background: #f5f5f5;*/
+				/*color: inherit;*/
+				/*display: inline-block;*/
+				/*height: $base-row4-height;
+				line-height: $base-row4-height;*/	
+				/*border-top: 1px solid white;*/
+				/*-webkit-transition: background .5s;*/			
+			}
+			&__data-name .icon { /* icon */
+			}
+			&__data-name .label{ /* title */
+				/*padding: 0 $base-button-pad;*/
+			}
+			tr:hover &__data-name .icon{ /* icon on hover */
+				/*background: #eee;*/
+				/*> i { color: white; }*/
+				/*-webkit-transition: background .1s;*/
+			}
+			tr:hover &__data-name .label{ /* title on hover*/
+				/*background: #eee;*/
+				/*color: white;*/
+				/*-webkit-transition: background .1s;*/
+			}
+			tr &__data-name .icon:hover { /* icon on hover */
+				/*background: #666;
+				> i { color: white; }*/
+				/*-webkit-transition: background .1s;*/
+			}
+			tr &__data-name .icon:hover ~ .label{ /* title on hover*/
+				/*background: $openorange-color;
+				color: white;*/
+				/*-webkit-transition: background .1s;*/
+			}
+		/*}*/
+}
+

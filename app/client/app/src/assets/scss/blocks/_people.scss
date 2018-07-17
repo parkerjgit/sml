@@ -1,0 +1,91 @@
+/*
+ * People (Block view)
+ *
+ * LAYOUT:
+ *
+ * relations--header
+ * relations--header-left
+ * relations--header-right
+ * relations--gallery
+ * relations--gallery-list (ul)
+ * relations--gallery-item (li)
+ *
+ * CONTENT:
+ *
+ * relations--title (h2)
+ *
+ * <div class="card people">
+ *	 <div class="card__item card__slide people__thumb"></div>
+ *	 <div class="card__item card__header people__title"></div>
+ *	 <div class="card__item card__body people__body"></div>
+ *   <div class="card__item card__footer"></div>
+ * </div>
+ *
+ */
+
+
+/* ==================================================================
+## Layout
+===================================================================== */
+
+.card.peoples {
+	/* layout card */
+	/*@include tiny   { > .card__header { display: none; } }
+	@include mobile { > .card__header { display: none; } }
+	@include narrow { > .card__header { display: none; } }
+	@include wide   { > .card__header { display: none; } }
+	@include wider  { > .card__header { display: none; } }*/
+	@include widest	{ 
+
+		/*> .card__header { display: none; }*/
+
+		margin-left: gutter(13);
+		margin-right: gutter(13);
+		clear: left; 
+		float: none;
+	} 
+	@include full	{ 
+
+		@include span(isolate 12 at 4 of 18);
+		/*> .card__header { 
+			display: none;
+			@include span(first 3 of 18);
+		}	
+		> .card__body { 
+			@include span(last 15 of 18); 
+			float: right;  
+		}
+		> .card__footer { 
+			@include span(last 15 of 18); 
+			clear: right; 
+			float: right; 
+		}  
+		float: none;*/
+	} 
+}
+
+.card.people {
+
+	/* remove overlapping line */
+	/*@include full 	{ &:nth-child(1) {border-top: none;} }*/
+
+	/* layout card items */
+	.card {
+		&__item {}
+		&__header {}
+		&__slide {}
+		&__body {
+
+			/*width: 100%;*/
+			@include tiny   {  }
+			@include mobile {  }
+			@include narrow {  }
+			@include wide   {  }
+			@include wider  { /*width: span(8 of 9);*/ }
+			@include widest	{ /*width: span(8 of 9);*/ }
+			@include full 	{ /*width: span(9 of 12);*/ }
+		}
+		&__footer {}
+	}
+
+}

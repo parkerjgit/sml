@@ -1,0 +1,81 @@
+/* ==================================================================
+## Config
+===================================================================== */	
+
+/* button sizing is relative to container, ie. titlebar, toolbar, or tagline */
+
+
+
+$button-base-font-size:		.8em;
+
+$button-pad-horiz:			$base-button-pad-horiz;
+$button-height:				$base-button-height;
+
+$button-bg-color:			$btn-focus-color;
+$button-hover-bg-color:		#e5e5e5;
+
+$button-bg-color-inv:		$btn-focus-color-inv;
+
+/* ==================================================================
+## Main Content
+===================================================================== */
+
+.button{ /* button */
+
+	display: inline-block;
+
+	/*font-size: 				$button-base-font-size;*/
+
+	/*height: 				$button-height; */
+	padding-left: 			$base-button-pad-horiz;
+	padding-right: 			$base-button-pad-horiz;
+	margin-right: 			$base-button-spacing;
+	/*margin-left:			$base-button-spacing;*/
+
+	/*background:				$button-bg-color;*/
+
+	/*&:hover{
+		background:			$button-hover-bg-color;
+	}*/
+
+	cursor: pointer;
+}
+
+.radio-button{
+
+	height: 				2rem;
+	line-height:			2rem;
+
+	font-weight:			bold;
+
+	background:				$button-bg-color;
+	&:hover{
+		background:			$button-bg-color;
+		color:				inherit;
+	}
+
+}
+
+.radio-button.active{
+
+	background:				#ccc;
+	&:hover{
+		background:			#ccc;
+	}
+}
+
+.radio-button.invert{
+
+	background:				$button-bg-color-inv;
+	&:hover{
+		background:			$button-bg-color-inv;
+	}
+}
+
+.radio-button.active.invert{
+
+	background:				#555;
+	&:hover{
+		background:			#555;
+	}
+}

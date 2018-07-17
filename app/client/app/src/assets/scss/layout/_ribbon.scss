@@ -1,0 +1,87 @@
+/* ==================================================================
+## Config
+===================================================================== */
+
+$ribbon-base-font-size:		1rem;
+$ribbon-height:				$base-row2-height;
+
+/* ==================================================================
+## 
+===================================================================== */
+
+.ribbon-wrapper {
+
+}
+
+.ribbon {
+
+	overflow: 					hidden;
+	height: inherit;
+	line-height: inherit;
+
+	&__segments {
+
+		/* handle item overflow here */
+	}
+}
+		/* placeholder to prevent applying base class without position subclass*/
+		%ribbon__segment {
+
+			overflow: hidden; 
+			white-space: nowrap; 
+			text-overflow: ellipsis;
+		}
+		.ribbon__segment.right {
+
+			@extend %ribbon__segment;
+			float: right; 
+		}
+		.ribbon__segment.left {
+
+			@extend %ribbon__segment;
+			float: left;
+		}
+		.ribbon__segment.center {
+
+			@extend %ribbon__segment;
+			float: none;
+			text-align: center;
+		}
+
+
+.ribbon.sml {
+
+	height: 					$base-row3-height;
+	line-height:  				$base-row3-height;	
+}
+.ribbon.med {
+
+	height: 					$base-row2-height;
+	line-height:  				$base-row2-height;
+}
+.ribbon.big {
+
+	height: 					$base-row1-height;
+	line-height:  				$base-row1-height;	
+}
+.ribbon.bigr {
+
+	height: 					$base-row0-height;
+	line-height:  				$base-row0-height;	
+}
+.ribbon.dbl {
+
+	height: 					$base-row2-height *2;
+	line-height:  				$base-row2-height *2;	
+}
+
+/* width */
+.w--100p {width: 100%;}
+.w--95p {width: 95%;}
+.w--90p {width: 90%;}
+.w--85p {width: 85%;}
+
+/* segment modifiers */
+/*.fl--l { float: left; }
+.fl--r { float: right; }
+.fl--n { float: none; }*/

@@ -1,0 +1,200 @@
+/* ==================================================================
+ *
+ * Card Component: 
+ *
+ * A card has a title, some content, and some tags. It is responsible
+ * for padding itself and spacing out its contents. Ideally card would
+ * not know what its contents are, but for now, it does...
+ *
+ * media is a layout class, should not include anything for anything
+ * except spacing
+ *
+===================================================================== */
+
+/* ==================================================================
+## Config
+===================================================================== */
+
+$base-media-spacing: 1.5em;
+
+/* ==================================================================
+## Layout
+===================================================================== */
+
+/*.card {
+
+	&__title 	{	margin: $base-row-pad 0;	}
+	&__slide 	{		}
+	&__body p 	{	margin: $base-row-pad 0;	}
+	&__tags 	{	margin: $base-row-pad 0;	}
+}*/
+
+
+
+/* ==================================================================
+## Typography
+===================================================================== */
+
+.media {
+
+	/*overflow:hidden; */
+	_overflow:visible; 
+	zoom:1;
+
+	/*margin-bottom: $base-row-pad;*/
+	/*padding: 	$base-media-spacing 0;*/
+
+	&__img	{
+
+		display:block; /* might have to move this to __img > img */
+		float: left;
+    	/*margin-right: 	$base-media-spacing;*/
+    	
+	}
+
+	&__img--profile {
+
+		@include tiny   { width: span(6 of 12); }
+		@include mobile { width: span(6 of 12); }
+		@include narrow { width: span(4 of 12); }
+		@include wide   { width: span(4 of 12); }
+		@include wider	{ width: span(3 of 12); margin-right: gutter(12);}
+		@include widest	{ width: span(3 of 12); margin-right: gutter(12); }
+		@include full	{ width: span(3 of 12); margin-right: gutter(12); }
+	}
+
+	&__img--relation {
+
+		/*@include wide	{ width: span(4 of 12); }
+		@include wider	{ width: span(4 of 12); }
+		@include widest	{ width: span(6 of 12); }*/
+	}
+
+	&__imgR	{
+
+		display:block; /* might have to move this to __img > img */
+		float: right;
+    	padding-left: 	$base-media-spacing;
+    	
+	}
+
+	&__contents	{	
+
+		overflow:hidden; 
+		_overflow:visible; 
+		zoom:1;
+	}
+
+}
+
+/* ==================================================================
+## .mediaCard subclass overrides .media base class 
+===================================================================== */
+
+/* config */
+$mediaCard-spacing: 1.5em;
+
+/* layout */
+.mediaCard-wrapper {
+
+	@include gallery-container;
+}
+
+/* subclass overrides */
+.media.mediaCard {
+
+	/*clear: both;
+	overflow: auto;*/
+	position: relative;	
+
+	.media__img	{
+
+    	/*margin-right: 	$mediaCard-spacing;*/  
+	}
+}
+
+
+/* ==================================================================
+## .mediaTitle subclass overrides .media base class 
+===================================================================== */
+
+/* config */
+$mediaTitle-spacing: 		$base-spacing;
+$mediaTitle-spacing-sml: 	$base-spacing-sml;
+$mediaTitle-spacing-big: 	$base-spacing-huge;
+
+/* layout */
+.mediaTitle-wrapper {}
+
+/* subclass overrides */
+.media.mediaTitle {
+
+	clear: right; /* fix stacked media titles */
+
+	overflow:			visible;
+	margin: 			$mediaTitle-spacing 0;
+
+	.media__imgR	{   
+    	margin-top: (-$mediaTitle-spacing);	
+    	/*padding-right: 0.75rem;*/
+
+    	height: $base-row2-height;
+		line-height: $base-row2-height;
+	}
+
+	.media__contents	{
+
+		margin-right: 15%;	
+
+		h1, h2, h3, h4, h5, h6 {
+
+			/*line-height: 1.25rem;*/
+			line-height: $base-row2-height - (2 * $mediaTitle-spacing);
+		}
+	}
+
+}
+
+.media.mediaTitle.mediaTitle--sml { /* use with ribbon--sml */
+
+	margin: 			$mediaTitle-spacing-sml 0;
+
+	.media__imgR	{   
+
+		margin-top: (-$mediaTitle-spacing-sml);
+		height: $base-row3-height;
+		line-height: $base-row3-height;
+	}
+
+	.media__contents	{	
+
+		h1, h2, h3, h4, h5, h6 {
+
+			/*line-height: 1.25rem;*/
+			line-height: $base-row3-height - (2 * $mediaTitle-spacing-sml);
+		}
+	}
+}
+
+.media.mediaTitle.mediaTitle--big { /* use with ribbon--big */
+
+	margin: 			$mediaTitle-spacing-big 0;
+
+	.media__imgR	{   
+
+		margin-top: (-$mediaTitle-spacing-big);
+		height: $base-row1-height;
+		line-height: $base-row1-height;
+	}
+
+	.media__contents	{	
+
+		h1, h2, h3, h4, h5, h6 {
+
+			/*line-height: 1.25rem;*/
+			line-height: $base-row1-height - (2 * $mediaTitle-spacing-big);
+		}
+	}
+}
+
+/* behavior - media*/

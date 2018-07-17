@@ -1,0 +1,146 @@
+/* ==================================================================
+ *
+ * searchbar
+ *
+ * 
+ *
+===================================================================== */
+
+/* ==================================================================
+## Config
+===================================================================== */
+
+$searchbar-base-font-size:      1.1rem; /*$base-h3-font-size;*//*1rem;*/
+$searchbar-input-height:        2.5rem; /*$base-row1-height;*/ /*40px;*/
+$searchbar-width:               100%;
+
+$searchbar-input-bg-color:      $whitesmoke-bg-color;
+$searchbar-input-bg-color-inv:  $darksmoke-bg-color;
+$searchbar-hover-bg-color:      #e5e5e5;
+$searchbar-icon-color:          inherit;
+$searchbar-input-color:         inherit;
+$searchbar-placeholder-color:   inherit;
+
+$searchbar-input-font-size:     $h4-font-size;
+
+/* ==================================================================
+## Layout
+===================================================================== */
+ 
+.searchbar-wrapper{ 
+
+  width: 100%;
+}
+ 
+.searchbar{              
+
+  /*display:                  inline-block;*/
+  position:                 relative;
+  height:                   $base-row1-height;
+  line-height:              $base-row1-height;
+  background:               $searchbar-input-bg-color;
+
+  /*@include full {
+    background:             $base-bg-color;      
+  }*/
+
+  /*&__icon{
+    
+    display:                inline-block;
+    position:               absolute;
+    height:                 $searchbar-input-height;
+    line-height:            $searchbar-input-height;
+    margin-left:            12px;  
+    z-index:                1;
+    float:                  left;
+  }
+
+  &__icon > i {
+
+    font-size:              .75rem;
+    vertical-align:         middle;
+  }*/
+
+  &__input {}
+
+  &__input form {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__input input.form-submit{
+    display: none;
+  }
+
+  /*&__input input#search{*/
+  &__input input.form-text{
+
+      font-family:            $searchbar-font-family !important;
+      font-size:              $searchbar-input-font-size !important;
+      color:                  $searchbar-input-color !important;
+      /*font-weight:           bold !important;*/
+      border:                 none !important;
+      
+      line-height:            $searchbar-input-height;
+      height:                 $searchbar-input-height;
+      background:             $searchbar-input-bg-color;
+
+      /*@include full {
+        background:           $base-bg-color;      
+      }*/
+   
+      margin:                 0 gutter(3.5 1) * 0.5;
+      padding:                0 gutter(3.5 1) * 0.5;
+      width:                  span(3 of 3.5);
+
+      -webkit-border-radius:  5px;
+      -moz-border-radius:     5px;
+      border-radius:          5px;
+
+  }
+
+  /* remove glowing blue border on focus */
+  &__input input:focus {
+    outline:none;
+  }
+
+  /* remove input "x" reset button */
+  &__input input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+  &__input input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+  &__input input[type="search"]::-webkit-search-decoration,
+  &__input input[type="search"]::-webkit-search-cancel-button,
+  &__input input[type="search"]::-webkit-search-results-button,
+  &__input input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+  /* placeholder text color */
+  &__input input.form-text::-webkit-input-placeholder {
+     color: $searchbar-placeholder-color;
+  }
+  &__input input.form-text:-moz-placeholder { 
+     color: $searchbar-placeholder-color;  
+  }
+  &__input input.form-text::-moz-placeholder {  
+     color: $searchbar-placeholder-color;  
+  }
+  &__input input.form-text:-ms-input-placeholder {  
+     color: $searchbar-placeholder-color;  
+  }
+
+}
+
+.searchbar.invert{ 
+
+  background:             $searchbar-input-bg-color-inv;
+  @include full {
+    background:           $base-bg-color-inv;      
+  }
+
+  input.form-text{
+    background:             $searchbar-input-bg-color-inv;
+    @include full {
+      background:           $base-bg-color-inv;      
+    }
+  }
+}

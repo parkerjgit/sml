@@ -1,0 +1,282 @@
+/* ==================================================================
+ *
+ * Table Base Style
+ *
+ * Perhaps this should be moved to _base.scss
+ *
+===================================================================== */
+
+/* ==================================================================
+## Config
+===================================================================== */
+
+/*$table-base-font-size:			1rem;
+$table-head-font-size: 			$h7-font-size;
+$table-body-font-size: 			$h7-font-size;*/
+
+/*$row-focus-color:				$table-row-focus-color;
+$row-focus-color-inv:			$table-row-focus-color;*/
+
+
+
+/* ==================================================================
+## Config
+===================================================================== */
+
+/*.views-table {*/
+
+table {
+
+	width:				100%;
+	display:			table;
+	table-layout:		fixed;
+}
+
+	th,td {
+
+		/*display: block;*/
+		white-space: 		nowrap;
+		overflow: 			hidden;
+		text-overflow: 		ellipsis;		
+		vertical-align: 	middle;
+		/*padding-left:		$base-button-pad-horiz;*/
+		/*padding: 			0 1em;*/
+		text-align:			left;
+	}
+
+	/* make links in cells easily selectable */
+	td > a,
+	th > a,
+	td > span,
+	td > time {
+
+		width:100%;
+
+		/* get text overflow ellipses working */
+		/*display: 			inline-block;*/
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+
+		/*height: 			3rem;
+		line-height: 		3rem;*/
+
+		text-decoration: none;
+		/*color: $table-font-color;*/
+		/*vertical-align: inherit;*/
+	}
+
+	td > a > img {
+		vertical-align: inherit;
+	}
+
+	/*td*/.data--left {
+		/*float:left;*/
+		text-align:left;
+	}
+
+	/*td*/.data--right {
+		/*float:right;*/
+		text-align:right;
+		/*padding-left: 0;*/
+		/*padding-right: $base-button-pad-horiz;*/
+
+		/*.icon {
+			float: right;
+		}*/
+	}
+
+	th.data--right {
+		/*padding-left: 0;
+		padding-right: $base-button-pad-horiz;*/
+
+		/*@include full {
+			padding-right: 0;
+		}*/
+	}
+
+	/*tr.row--clickable,
+	tr.row--clickable-ext { 
+		cursor: pointer; 
+	}*/
+
+	.clickable {
+		cursor: pointer;
+	}
+
+/*%tbl {}*/
+
+/* ==================================================================
+## Table type placeholder
+===================================================================== */
+%tbl-type {
+
+	font-size:			$tbl-font-size;
+	text-transform: 	uppercase;
+
+	thead {
+
+		font-size: $tbl-font-size; 
+		
+		/*@include tiny {}
+		@include mobile {}
+		@include narrow {}
+		@include wide {}*/
+		@include wider { }
+		@include widest { font-size: $tbl-font-size-minus; }
+		@include full {  }	
+	}
+
+	tbody {
+
+		font-size: $tbl-font-size; 
+
+		/*@include tiny {}
+		@include mobile {}
+		@include narrow {}
+		@include wide {}*/
+		@include wider { }
+		@include widest { font-size: $tbl-font-size-minus; }
+		@include full { font-size: $tbl-font-size-minus;  }	
+	}
+}
+
+/* ==================================================================
+## Table spacing placeholder
+===================================================================== */
+%tbl-spacing {
+
+	th {
+
+		height: 				$base-row2-height;
+		line-height: 			$base-row2-height;
+
+		@include tiny {}
+		@include mobile {}
+		@include narrow {}
+		@include wide {}
+		@include wider {}
+		@include widest {
+			height: 			$base-row1-height;
+			line-height: 		$base-row1-height;
+		}
+		@include full {
+			height: 			$base-row1-height;
+			line-height: 		$base-row1-height;
+		}
+	}
+
+	td {
+
+		height: 				$base-row2-height;
+		line-height: 			$base-row2-height;
+
+		a {
+			height:					$base-row2-height;
+			line-height: 			$base-row2-height;
+			width:					$base-row2-height *.75;
+		}
+
+		@include tiny {}
+		@include mobile {}
+		@include narrow {}
+		@include wide {}
+		@include wider {}
+		@include widest {
+
+			height: 			$base-row3-height;
+			line-height: 		$base-row3-height;
+
+			a {
+				height:					$base-row3-height;
+				line-height: 			$base-row3-height;
+				width:					$base-row3-height;
+			}
+		}
+		@include full {
+
+			height: 			$base-row3-height;
+			line-height: 		$base-row3-height;
+
+			a {
+				height:					$base-row3-height;
+				line-height: 			$base-row3-height;
+				width:					$base-row3-height;
+			}
+		}
+	}
+}
+
+/* ==================================================================
+## Table borders placeholder
+===================================================================== */
+%tbl-bd {
+
+	tr {
+
+		border-top: 1px solid $tbl-bd-color;
+
+		&:nth-last-child(1) {
+			border-bottom: 1px solid $tbl-bd-color;
+		}
+	}
+
+	tr {
+
+		@include widest { /*border: none !important; */}
+		@include full { /*border: none !important;*/ }
+	}
+
+	thead > tr {
+
+		/* toolbar provides top border */
+		border-top: none;
+	}
+}
+
+/* ==================================================================
+## Table borders inverted placeholder
+===================================================================== */
+%tbl-bd-inv {
+
+	tr {
+
+		border-top: 1px solid $tbl-bd-color-inv;
+
+		&:nth-last-child(1) {
+			border-bottom: 1px solid $tbl-bd-color-inv;
+		}
+	}
+
+	thead > tr {
+
+		/* this invert override shouldn't be necessary, but it is! */
+		border-top: none;
+	}
+}
+
+/* ==================================================================
+## Tbl
+===================================================================== */
+.table {
+	/*@extend %tbl;*/
+	@extend %tbl-bd;
+	@extend %tbl-type;
+	@extend %tbl-spacing;
+	&.invert{
+		@extend %tbl-bd-inv;
+	}
+}
+
+/*table.invert {*/
+
+	/*tr {
+
+		border-top: 1px solid $tbl-bd-color-inv;
+
+		&:nth-last-child(1) {
+			border-bottom: 1px solid $tbl-bd-color-inv;
+		}
+	}*/
+/*}*/	

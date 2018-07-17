@@ -1,0 +1,127 @@
+/* ==================================================================
+ *
+ *
+ * recent news & news items
+ *
+ *
+===================================================================== */
+
+.card.recent-news {
+
+	/* position card */
+	@include tiny   {  }
+	@include mobile {  }
+	@include narrow {  }
+	@include wide   {  }
+	@include wider  {  }
+	@include widest { 
+
+		/*padding-left: gutter(13);
+		padding-right: gutter(13);
+		clear: left;
+		float: none;*/
+	}
+	@include full   { 
+
+		/*@include span(isolate 12 at 4 of 18);*/
+	}
+
+	> .card {
+
+		/* position card */
+		@include tiny   {  }
+		@include mobile {  }
+		@include narrow {  }
+		@include wide   {  }
+		@include wider  {  }
+		@include widest {  }
+		@include full   {
+
+			/*&__header { 
+				@include span(first 3 of 12); 
+			}	
+			&__body { 
+				@include span(last 9 of 12); float: right;  
+			}
+			&__footer { 
+				@include span(last 9 of 12); float: right; 
+			}*/
+		}
+	}
+}
+
+.card.news-item {
+
+	@include tiny   {  }
+	@include mobile {  }
+	@include narrow {  }
+	@include wide   {  }
+	@include wider  {  }
+	@include widest {  }
+	@include full   {  }
+
+	.card {
+
+		&__header { 
+
+			/*@include full { display: none; }*/
+		}
+
+		&__media {	
+
+			@include tiny   { width: span(12 of 12); }
+			@include mobile { width: span(12 of 12);}
+			@include narrow { width: span(12 of 12); }
+			@include wide   { width: span(9 of 9); }
+			@include wider  { width: span(12 of 12); }
+
+			@include widest	{
+
+				@include span(isolate 11 at 1.5 of 12); float: none;
+				width: span(11 of 12); 
+			}
+
+			@include full {
+
+				@include span(isolate 11 at 1.5 of 12); float: none;
+				width: span(11 of 12); 
+			}
+		}
+	
+		&__body { 
+
+			> .bd { width: span(8 of 9); }
+
+			@include wider {
+				> .bd { width: span(11 of 12); }
+			}
+
+			@include widest {
+				> .bd { width: span(11 of 12); }
+
+				clear: left;
+				float: left;
+			}
+
+			@include full {
+				> .bd { width: span(11 of 12); }
+
+				clear: left;
+				float: left;
+			}
+		}
+
+		&__footer { 
+
+			@include widest {
+
+				clear: left;
+			}
+
+			@include full {
+
+				clear: left;
+			}
+		}
+	}
+}

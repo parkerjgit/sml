@@ -1,0 +1,78 @@
+/* ==================================================================
+ *
+ * node Component: 
+ * A node has a title, some content, and some tags
+ *
+ *
+===================================================================== */
+
+/* ==================================================================
+## Config
+===================================================================== */
+
+$node-base-font-size:		1rem;
+$node-body-font-size:		.9em;
+
+/* ==================================================================
+## Layout
+===================================================================== */
+
+.node {
+
+	&__title 	{	margin: $base-row-pad 0;	padding: 0 $base-pad-horiz;	}
+	&__slide 	{	/**/	}
+	&__body p 	{	margin: $base-row-pad 0;	padding: 0 $base-pad-horiz;	}
+	&__tagline 	{	margin: $base-row-pad/2 0;	}
+}
+
+
+
+/* ==================================================================
+## Typography
+===================================================================== */
+
+.node {
+
+	/* 	
+		module-level styling
+		typically only font-size is specified at module level
+		and em sizing below it is relative to it
+	*/
+	font-size:				$node-base-font-size;
+
+	&__title 	{	
+
+		/*font-size: 		$node-title-font-size;*/
+		/*line-height: 		$node-title-line-height;*/
+		/*color: 			$node-title-font-color;*/
+	}
+
+	&__slide 	{	/**/	}
+
+	&__body p 	{
+
+		font-size: 			$node-body-font-size;
+		/*line-height: 		$node-body-line-height;*/
+		/*color: 			$node-body-font-color;*/
+		text-align:			justify;
+	}
+
+	&__tags 	{	/**/	}
+}
+
+/* ==================================================================
+## Temp Subclasses
+===================================================================== */
+
+/* node types (ie. subclasses) */
+
+.node.practice--node {}
+
+.node.profile--node { 
+
+	border: none;
+
+	.node--body{
+		margin-bottom: 50px;
+	} 
+}

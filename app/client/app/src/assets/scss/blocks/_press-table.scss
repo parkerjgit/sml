@@ -1,0 +1,133 @@
+/* ==================================================================
+ *
+ * Press Table Class
+ *
+ * Responsible for making press table responsive
+ *
+===================================================================== */
+
+/* ==================================================================
+## Config
+===================================================================== */
+
+/* ==================================================================
+## Layout
+===================================================================== */
+
+@mixin card-layout-vert { 
+
+	padding-left: gutter(13);
+	padding-right: gutter(13);
+	clear: left;
+	float: none;
+}
+
+@mixin card-type-6col { 
+
+	> .card__header { 
+		@include span(first 3 of 18); 
+	}	
+	> .card__body { 
+		@include span(last 12 of 18); 
+		float: right;  
+	}
+	> .card__footer { 
+		@include span(last 12 of 18); 
+		clear: right; 
+		float: right; 
+	}
+}
+
+.card.press {
+
+	/*.card__header { display: initial; }*/
+
+	/*@include tiny {
+		.card__header { display: none; }
+	}
+	@include mobile {
+		.card__header { display: none; }
+	}*/
+	@include widest	{ 
+		@include card-layout-vert;  
+		float: none;
+	} 
+	@include full	{ 		
+		@include card-type-6col;
+		/*@include card-layout-horiz;  
+		float: none;*/
+	} 
+}
+
+.press-table {
+
+	&__table {}
+
+		@include tiny {
+			&__head 					{ display: none; }
+			&__data-publication-date 	{ display: none; }
+			&__data-name				{ /*width: 88%;*/ }
+			&__data-publication 		{ display: none; }
+			&__data-icon 				{ width: 12%;}
+		}
+
+		@include mobile {
+			&__head 					{ display: none; }
+			&__data-publication-date 	{ width: 17%; }
+			&__data-name				{ /*width: 71%;*/ }
+			&__data-publication 		{ display: none; }
+			&__data-icon 				{ width: 12%;}
+		}
+
+		@include narrow {
+			&__head 					{ display: none; }
+			&__data-publication-date 	{ width: 12%; }
+			&__data-name				{ /*width: 79%;*/ }
+			&__data-publication 		{ display: none; }
+			&__data-icon 				{ width: 9%;}
+		}
+
+		@include wide {
+			&__head 					{ display: none; }
+			&__data-publication-date 	{ width: 12%; }
+			&__data-name				{ /**/ }
+			&__data-publication 		{ display: none; }
+			&__data-icon 				{ width: 9%;}
+		}
+
+		@include wider {
+			&__head 					{ display: table-row-group; }
+			&__data-publication-date,
+			&__head-publication-date 	{ width: 8%; }
+			&__data-publication,
+			&__head-publication 		{ width: 18%; }
+			&__data-name,
+			&__head-name				{ /**/ }
+			&__data-icon,
+			&__head-icon 				{ width: 6%; }
+		}
+
+		@include widest {
+			&__head 					{ display: table-row-group; }
+			&__data-publication-date,
+			&__head-publication-date 	{ width: 9%; }
+			&__data-publication,
+			&__head-publication 		{ width: 18%; }
+			&__data-name,
+			&__head-name				{ /**/ }
+			&__data-icon,
+			&__head-icon 				{ width: 7%; }
+		}
+
+		@include full {
+			&__head 					{ display: table-row-group; }
+			&__data-publication-date,
+			&__head-publication-date 	{ width: 10%; }
+			&__data-publication,
+			&__head-publication 		{ width: 21%; }
+			&__data-name,
+			&__head-name				{ /**/ }
+			&__data-icon,
+			&__head-icon 				{ width: 5%; }
+		}
+}

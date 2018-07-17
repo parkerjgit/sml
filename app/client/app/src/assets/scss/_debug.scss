@@ -1,0 +1,100 @@
+/* ==================================================================
+## Debug
+===================================================================== */
+
+/*.layout, .region {pointer-events: none;}*/
+
+.layout {
+
+
+	/*border: solid 1px #333;	*/
+   /* background: whitesmoke;*/
+   /*background: rgba(237,242,246,.3);*/ /*#edf2f6;*/
+   /*background: white;*/
+
+}
+
+.region {
+
+	/*border: solid 1px blue;	*/
+    /*background: rgba(255,255,255,.8);*/ /*white;*/
+    /*box-shadow: 1px 0px 8px 0px #999;*/
+    @include widest {
+        /*border-right: 1px solid #ccc;
+        border-left: 1px solid #ccc;*/
+        /*box-shadow: 7px 0 8px -9px #999, -7px 0 8px -9px #999;*/
+    }
+
+}
+.card {
+
+	/*border: solid 1px red;*/
+}
+
+/* temp */
+.flexslider { margin-bottom:0; }
+.flex-control-nav { display:none; }
+
+.grid-on {
+
+    /* tiny, mobile */
+	  // background: url('../images/grid-mobile-red.png');
+    opacity: .5;
+    background-size: 100% 600%;
+    background-repeat: no-repeat;
+
+    @include narrow {
+        // background: url('../images/grid-narrow-red.png');
+        opacity: .5;
+        background-size: 100% 600%;
+        background-repeat: no-repeat;
+    }
+
+    @include wide {
+        // background: url('../images/grid-wide-red.png');
+        opacity: .5;
+        background-size: 100% 600%;
+        background-repeat: no-repeat;
+    }
+
+    @include wider {
+        // background: url('../images/grid-wider-red.png');
+        opacity: .5;
+        background-size: 100% 600%;
+        background-repeat: no-repeat;
+    }
+
+    @include widest {
+    	// background: url('../images/grid-widest-red.png');
+        opacity: .5;
+    	background-size: 100% 600%;
+    	background-repeat: no-repeat;
+    }
+
+    @include full {
+        // background: url('../images/grid-widest-red.png');
+        opacity: .5;
+        background-size: 100% 600%;
+        background-repeat: no-repeat;
+    }
+}
+
+.notice.ie-not-supported {
+    z-index:            1000000000;
+    position:           fixed;
+    top:                0;
+    left:               0;
+    width:              100%;
+    height:             100vh;
+    /*pointer-events:   none;*/
+    background:         white;
+}
+
+.notice__content {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,325 @@
+/* ==================================================================
+ *
+ * Card Component: 
+ *
+ * A card has a title, some content, and some tags. It is responsible
+ * for padding itself and spacing out its contents. Ideally card would
+ * not know what its contents are, but for now, it does...
+ *
+ *
+===================================================================== */
+
+/* ==================================================================
+## Config
+===================================================================== */
+
+$card-base-font-size:			1rem;
+/*$card-body-font-size:			1em;*/
+
+
+/* ==================================================================
+## Layout
+===================================================================== */
+
+.card {
+
+	/* border-top: 1px solid #e1e1e1; */
+
+	/*padding: 	$base-row-pad*.2 0;*/ /* <-- magic number */
+
+	&__header 	{		}
+	&__slide 	{	/*margin: $base-title-spacing 0;*/	}
+	&__body p 	{		}
+	&__body--big p	{ /*margin: $base-row-pad $base-row-pad;*/ }
+	&__footer 	{		}
+
+}
+
+/* ==================================================================
+## Typography
+===================================================================== */
+
+.card {
+
+	/* 	
+		module-level styling
+		typically only font-size is specified at module level
+		and em sizing below it is relative to it
+	*/
+	font-size:				$card-base-font-size;
+
+	overflow: hidden;
+	/*padding: 0;*/ /* what for?? */
+
+	/* trying this */
+	clear: left;
+	float: none;
+
+	@include widest {
+
+	}
+
+	&__item {
+		/*overflow: hidden;*/
+	}
+
+	&__item--spaced 		{ margin: $base-spacing 0; }
+	&__item--spaced-more 	{ margin: $base-spacing-big 0; }
+	&__item--spaced-less 	{ margin: $base-spacing-sml 0; }
+	&__item--spaced-most 	{ margin: $base-spacing-huge 0; }
+	&__item--spaced-dbl		{ margin: $base-spacing*2 0; }
+	&__item--spaced-most-top { margin: $base-spacing-huge 0 0 0; }
+
+	&__header {
+		
+	}
+
+	&__slide,
+	&__media {
+
+		width: 100%;	
+
+		img { /* moved to thumb */
+
+			width:100%;
+			height:auto;
+
+			/* remove pesky white space below images */
+			display: block;
+		}
+	}
+
+	&__body {
+
+	}
+
+	&__footer {
+
+	}
+
+}
+
+/* ==================================================================
+## card types (ie. subclasses) - CARD-GRID-3COL
+===================================================================== */
+
+/* 
+ * card--task-main 
+ */
+@mixin card-layout-horiz { 
+
+	@include span(isolate 12 at 4 of 18); 
+	clear: left;
+	float: none;
+}
+
+@mixin card-layout-horiz-left { 
+
+	@include span(15 of 18); 
+	clear: left;
+	float: none;
+}
+
+@mixin card-layout-horiz-wider { 
+
+	@include span(isolate 14 at 3 of 18); 
+	clear: left;
+	float: none;
+}
+
+@mixin card-layout-horiz-widest { 
+
+	@include span(isolate 16 at 2 of 18); 
+	clear: left;
+	float: none;
+}
+
+@mixin card-layout-vert { 
+
+	margin-left: gutter(13);
+	margin-right: gutter(13);
+	clear: left;
+	float: none;
+}
+
+@mixin card-slideshow-full {}
+
+@mixin card-slideshow-half {
+
+	card__slide	{	
+
+		@include tiny   { width: 100% }
+		@include mobile { width: 100% }
+		@include narrow { width: span(8 of 12); }
+		@include wide   { width: span(6 of 9) }
+		@include wider  { width: span(6 of 12) }
+		@include widest	{ width: span(6 of 12); }
+		@include full	{ width: span(6 of 15); }
+	}
+}
+
+@mixin card-type-3col { 
+	
+	> .card__header { 
+		@include span(first 4 of 12); 
+	}	
+	> .card__body { 
+		@include span(last 8 of 12); 
+		float: right;  
+	}
+	> .card__footer { 
+		@include span(last 8 of 12); 
+		clear: right; 
+		float: right; 
+	}
+}
+
+@mixin card-type-4col { 
+
+	> .card__header { 
+		@include span(first 3 of 12); 
+	}	
+	> .card__body { 
+		@include span(last 9 of 12); 
+		float: right;  
+	}
+	> .card__footer { 
+		@include span(last 9 of 12); 
+		clear: right; 
+		float: right; 
+	}
+}
+
+@mixin card-type-5col { 
+
+	> .card__header { 
+		@include span(first 3 of 15); 
+	}	
+	> .card__body { 
+		@include span(last 12 of 15); 
+		float: right;  
+	}
+	> .card__footer { 
+		@include span(last 12 of 15); 
+		clear: right; 
+		float: right; 
+	}
+}
+
+@mixin card-type-6col { 
+
+	> .card__header { 
+		@include span(first 3 of 18); 
+	}	
+	> .card__body { 
+		@include span(last 15 of 18); 
+		float: right;  
+	}
+	> .card__footer { 
+		@include span(last 15 of 18); 
+		clear: right; 
+		float: right; 
+	}
+}
+
+@mixin card-type-12col	{ /* events */
+
+	.card__header h2 { 
+		/*font-size: $base-h2-font-size;
+		line-height: 1.67rem !important;*/
+		/*margin-right: span(3 of 12);*/
+	}
+
+	.card__slide {
+		@include span(isolate 10 at 2 of 12); float: none;
+		margin-top: gutter(12);
+		margin-bottom: gutter(12);
+	}
+
+	.card__body { 
+		float: none; 
+	}
+
+	.card__footer { 
+		float: none; 
+	}
+}
+
+/* ==================================================================
+## card type: pad-widest
+===================================================================== */
+
+.card.pad-widest { /* videos, projects-gallery */
+
+	@include widest	{ 
+		@include card-layout-vert;  
+	}  
+}
+
+/* ==================================================================
+## card type: shift-full
+===================================================================== */
+
+.slider {}
+	.card.shift-full {
+		/* maybe clear transitions here */
+		/*@include widest	{ @include card-layout-vert;  }*/ 
+		@include full { @include span(isolate 12 at 4 of 18);  } 
+	}
+
+.slider.close {
+	.card.shift-full {
+		@include full { @include span(isolate 12 at 4 of 18);  } 
+	}
+}
+.slider.open {
+	.card.shift-full {
+		@include full { @include span(isolate 12 at 7 of 18);  }
+	}
+}
+
+/* ==================================================================
+## card type: squish-full
+===================================================================== */
+
+.slider {}
+	.card.squish-full {
+		/* maybe clear transitions here */
+		/*@include widest	{ @include card-layout-vert;  }*/ 
+		@include full { /*@include span(isolate 12 at 4 of 18);*/  } 
+	}
+
+.slider.close {
+	.card.squish-full {
+		@include full { /*@include span(isolate 12 at 4 of 18);*/  } 
+	}
+}
+.slider.open {
+	.card.squish-full {
+		@include full { @include span(isolate 12 at 7 of 18);  }
+	}
+}
+
+/* ==================================================================
+## card types
+===================================================================== */
+
+/*.card.card--table {
+
+	@include widest	{ 
+		@include card-layout-vert; 
+	} 
+	@include full	{ 		
+		@include card-type-6col;
+	} 
+}*/
+
+
+
+.card.contact-info {
+
+	.card__body p {
+		text-align: center;
+	}
+}
+

@@ -1,0 +1,505 @@
+
+/* ==================================================================
+## icon Config
+===================================================================== */
+
+/* sizing relative to containter, ie titlebar, toolbar, or tagline */
+
+$icon-size:						$base-button-height;
+$icon-size--sml:				$base-icon-height;
+$icon-spacing:					0; /*.5em;*/
+$icon-color:					inherit;
+$icon-color-hover:				$openorange-color;
+$icon-bg-color:					none; /*#f9f9f9;*/
+$icon-hover-bg-color:			#e5e5e5;
+
+/* ==================================================================
+## Type
+===================================================================== */
+
+.icons {
+
+	/* apply global icon sizing, change to px to make size non-responsive */
+	/*font-size:	1rem;
+
+	&__container {
+
+		
+	}
+
+		&__item {
+
+			float:						right; 
+		}*/
+}
+
+			%icon { /*a*/
+
+				display: 				inline-block; /* height/width only work on a-link if inline-block */
+				cursor: 				pointer;
+
+				height:					$icon-size;
+				line-height: 			$icon-size;
+				width:					$icon-size;
+				margin-left: 			$icon-spacing;
+
+				text-align:				center; /* horiz align img */
+
+				i {	
+					color: 				$icon-color;
+				}
+
+				&:hover {
+
+					> i { color: 		$icon-color-hover; }
+				}
+						
+			}
+
+			%icon--noclick {
+
+				pointer-events: none;
+
+				&:hover {
+
+					> i { color: 		$icon-color; }
+				}
+			}
+
+			/* icon types, require 1 */
+			%icon--img {
+
+				@extend %icon;
+
+				img {
+					vertical-align: middle; 
+					width: initial;
+					height: auto;
+				}
+			}
+			%icon--fa {
+
+				@extend %icon;
+
+				font-size: 1.2rem;
+			}
+			%icon--mat {
+
+				@extend %icon;
+
+				font-size: 1.2rem;
+
+				i {
+					font-size: inherit;
+					vertical-align: middle;
+					line-height: inherit; /* override material-icons line-height that bumps vertical alignment down */
+				}
+			}
+			%icon--txt {
+
+				@extend %icon;
+			}
+
+			/* icon sizing */
+			%icon--fa { font-size: 1.2rem; } /* def */
+			%icon--fa-smlr { font-size: .8rem; }
+			%icon--fa-sml { font-size: 1.0rem; }
+			%icon--fa-big { font-size: 1.4rem; } 
+			%icon--fa-bigr { font-size: 1.8rem; }
+
+			%icon--mat { font-size: 1.2rem; } /* def */
+			%icon--mat-smlr { font-size: .9rem; }
+			%icon--mat-sml { font-size: 1.0rem; }
+			%icon--mat-big { font-size: 1.4rem; } 
+			%icon--mat-bigr { font-size: 1.8rem; }
+
+			/* icon sizing old */
+			/*.icon.smlr {
+				font-size: .8em;
+			}
+			.icon.sml {
+				font-size: .9em;
+			}
+			.icon.big {
+				font-size: 1.2em;
+			}
+			.icon.bigr {
+				font-size: 1.4em;
+			}
+			.icon.huge {
+				font-size: 1.8em;
+			}
+			.icon.huger {
+				font-size: 2.5em;
+			}*/
+
+			/* move icon left/right */
+			%btn--pull-left {
+				margin-left: $icon-size*(-0.33);
+			}
+			%btn--pull-right {
+				margin-right: $icon-size*(-0.33);
+			}
+			%btn--pull-left-more {
+				margin-left: $base-button-height-big*(-0.33);
+			}
+			%btn--pull-right-more {
+				margin-right: $base-button-height-big*(-0.33);
+			}
+			
+			/* icon colors */
+			/*.icon.inv {
+
+				> i { color: white; }
+				&:hover > i { color: white; }	
+			}*/
+			%icon--white {
+
+				> i { color: #eee; }
+				&:hover > i { color: white; }
+			}
+			%icon--orange {
+
+				> i { color: $openorange-color; }
+				&:hover > i { color: $openorange-color; }
+			}
+			%icon--grey {
+
+				> i { color: #555; }
+				&:hover > i { color: #555; }
+			}
+
+			%btn--orange {
+
+				background: $openorange-color;
+			}
+			%btn--white {
+
+				background: white;
+			}
+			%btn--inverse {
+
+				background: $btn-hover-color-inv;
+			}
+			%btn--overlay { /* use .icon.grey.on-white.overlay for image overlay */
+
+				opacity: .5;
+				&:hover { opacity: .6; }
+			}
+			%btn--inverse-overlay { /* frontpage */
+
+				opacity: .7;
+				&:hover { opacity: .8; }
+			}
+			%btn--whitesmoke {
+				background: $btn-hover-color;
+			}
+			%btn--darksmoke {
+				background: $btn-hover-color-inv;
+			}
+
+			/* button sizing */
+			%btn--sml { /* not used */
+				height:					$base-button-height-sml;
+				line-height: 			$base-button-height-sml;
+			}
+			%btn--smlr {
+				height:					$base-button-height-smlr;
+				line-height: 			$base-button-height-smlr;
+			}
+			%btn--big {
+				height:					$base-row2-height;
+				line-height: 			$base-row2-height;
+			}
+			%btn--big-sqr {
+				height:					$base-row2-height;
+				line-height: 			$base-row2-height;
+				width:					$base-row2-height;
+			}
+			%btn--bigr {
+				height:					$base-row1-height;
+				line-height: 			$base-row1-height;
+			}
+			%btn--bigr-sqr {
+				height:					$base-row1-height;
+				line-height: 			$base-row1-height;
+				width:					$base-row1-height;
+			}
+
+			/* icon button sizing */
+			/* see */
+			/*%btn-sml.sqr  {
+				width:					$base-button-height-sml;
+			}
+			%btn-smlr.sqr  {
+				width:					$base-button-height-smlr;
+			}
+			%btn-big.sqr  {
+				width:					$base-row2-height;
+			}
+			%btn-bigr.sqr  {
+				width:					$base-row1-height;
+			}*/
+
+			%btn--sqr {
+				
+				background: red;
+				position: relative;
+				width: 100%;		/* desired width */
+
+				&:before{
+					content: "";
+					/*display: block;*/
+
+					padding-top: 100%; 	/* initial ratio of 1:1*/
+				}
+			}
+
+
+			.icon--filter {
+				@extend %icon--mat;
+				@extend %btn--bigr;
+				/*@extend %btn--pull-left;*/			
+			}
+
+			/*icon fa btn-big icon--big*/
+			.icon--expand {
+				@extend %icon--fa;
+				/*@extend %icon--fa-sml;*/
+				@extend %btn--big;			
+			}
+
+			/*icon icon--button-big icon--sml*/
+			.icon--expand-menu {
+				@extend %icon--fa;
+				/*@extend %icon--fa-sml;*/
+				@extend %btn--big-sqr;	
+
+				float: right;		
+			}
+
+			/*type2 - grey, inverse on hover*/
+			.icon--type2 {
+				@extend %btn--whitesmoke;
+			}
+			.icon--type2:hover {
+				@extend %btn--inverse;
+				@extend %icon--white;
+			}
+			.icon--type2.invert {
+				@extend %btn--darksmoke;
+			}
+			.icon--type2.invert:hover {				
+			}
+
+			/* type3 - inverse */
+			.icon--type3 {
+				@extend %btn--inverse;
+				@extend %icon--white;
+			}
+
+			.icon--internal {
+				@extend %icon--mat;
+				@extend %btn--big;
+			}
+
+			.icon--internal-sqr {
+				@extend %icon--mat;
+				@extend %btn--big-sqr;
+				/*@extend %btn--whitesmoke;*/
+			}
+
+			/*icon fa icon--bigr btn-sml focus__btn*/
+			.icon--internal-sml {
+				@extend %icon--mat;
+				@extend %icon--mat-sml;
+				/*@extend %btn--big;*/
+			}
+
+			/*icon icon--bigr mat btn-big*/
+			.icon--internal-big {
+				@extend %icon--mat;
+				@extend %icon--mat-big;
+				@extend %btn--big;
+			}
+
+			/*icon icon--big btn-sml mat*/
+			.icon--external {
+				@extend %icon--mat;
+				@extend %icon--mat-sml;
+				/*@extend %btn--sml;*/
+			}
+
+			.icon--external-big {
+				@extend %icon--mat;
+				@extend %icon--mat-big;
+				@extend %btn--big;
+				/*@extend %btn--sml;*/
+			}
+
+			/*icon sml btn-smlr mat*/
+			.icon--external-sml {
+				@extend %icon--mat;
+				@extend %icon--mat-smlr;
+				@extend %btn--smlr;
+			}
+
+			/*icon btn-sml fa*/
+			.icon--file {
+				@extend %icon--fa;
+				@extend %icon--fa-smlr;
+				/*@extend %btn--sml;*/
+			}
+			
+			/*icon smlr btn-smlr fa*/
+			.icon--file-sml {
+				@extend %icon--fa;
+				@extend %icon--fa-smlr;
+				@extend %btn--smlr;
+			}
+
+			/*icon icon--mat inverse-overlay icon--big btn-big sqr*/
+			.icon--nextpage {
+				@extend %icon--mat;
+				@extend %icon--white;
+				@extend %btn--big-sqr;
+				/*@extend %btn--sqr;*/
+				@extend %btn--inverse-overlay;				
+			}
+
+			/*icon mat btn-bigr*/
+			.icon--menu {
+				@extend %icon--mat;
+				@extend %icon--mat-sml;
+				@extend %btn--bigr;
+				/*@extend %btn--orange;
+				@extend %icon--white;*/
+
+				@include tiny {display: none;}
+				@include mobile {display: none;}
+				@include widest { }
+				/*@include full {
+					background: none;
+					> i {color: inherit;}
+				}*/
+			}
+
+			.frontpage .icon--menu {
+				@extend %btn--orange;
+				@extend %icon--white;
+			}
+			.frontpage .icon--menu:hover {
+				@extend %icon--white;
+			}
+
+			/*.icon--type3 {
+				@extend %btn--orange;
+				@extend %icon--white;
+			}
+			.icon--type3:hover {
+				@extend %icon--white;
+			}*/
+
+			.icon--lang-en {
+
+				@extend %icon--txt;
+				@extend %btn--bigr;
+
+				font-size: $lang-fz-en;
+			}
+
+			.icon--lang-cn {
+
+				@extend %icon--txt;
+				@extend %btn--bigr;
+
+				font-size: $lang-fz-cn;
+			}
+
+			/*icon mat white on-orange icon--bigr btn-big sqr*/
+			.icon--menu-mobile {
+
+				@extend %icon--mat;
+				@extend %icon--mat-big;
+				@extend %icon--white;
+				@extend %btn--big-sqr;
+				@extend %btn--orange;
+				/*@extend %btn--sqr;*/
+
+				position: 		fixed;
+			    bottom: 		1.25rem;
+			    right: 			1.25rem; /*gutter(13);*/
+
+				@include narrow {display: none;}
+			    @include wide {display: none;}
+				@include wider {display: none;}
+				@include widest {display: none;}
+				@include full {display: none;}
+			}
+
+			/*icon icon--mat icon--overlay icon--bigr btn-big sqr*/
+			.icon--menu-fullpage {
+
+				@extend %icon--mat;
+				@extend %icon--mat-big;
+				@extend %btn--big-sqr;
+				@extend %icon--grey;
+				@extend %btn--white;
+				@extend %btn--inverse-overlay;
+				/*@extend %btn--sqr;*/
+
+				/*position: 		fixed;
+			    bottom: 		0;
+			    right: 			0; */
+
+				/*@include narrow {display: none;}
+			    @include wide {display: none;}
+				@include wider {display: none;}
+				@include widest {display: none;}
+				@include full {display: none;}*/
+			}
+
+			/*icon mat overlay icon--huge btn-big sqr*/
+			.icon--fullscreen {
+				@extend %icon--mat;
+				@extend %icon--mat-bigr;
+				@extend %btn--big-sqr;
+				@extend %icon--grey;
+				@extend %btn--white;
+				@extend %btn--overlay;
+				/*@extend %btn--sqr;*/
+			}
+
+			/*icon mat pull-left*/
+			.icon--tag {
+				@extend %icon--mat;
+				@extend %icon--mat-sml;
+				@extend %btn--pull-left;
+				@extend %icon--noclick;
+			}
+
+			/*icon mat btn-big*/
+			.icon--invert {
+				@extend %icon--mat;
+				@extend %icon--mat-sml;
+				@extend %btn--bigr;
+			}
+
+			/* icongallery not implimented */
+			.icon--social {}
+
+/* ==================================================================
+## modifiers
+===================================================================== */
+
+.noclick {
+	@extend %icon--noclick;
+}
+
+/* ==================================================================
+## temp
+===================================================================== */
+
+.material-icons{
+	font-size: 18px;
+}

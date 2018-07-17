@@ -1,0 +1,88 @@
+/* ==================================================================
+ *
+ *
+ * headlines card 
+ *
+ *
+===================================================================== */
+
+
+/* ==================================================================
+## Config
+===================================================================== */	
+
+$headlines-base-font-size:		1rem;
+
+/*$headline-font-size: 			0.8em;
+$headline-line-height: 			1.1;*/
+
+
+/* ==================================================================
+## Layout / Structure
+===================================================================== */
+
+.headlines {
+
+	&__titlebar {	
+		/*margin: 			$base-row-pad 0;*/	
+	}
+
+	&__teaser {	
+
+	}
+
+	&__tags {	
+		margin-top: 		$base-row-pad;	
+	}
+}
+
+/* ==================================================================
+## Typography
+===================================================================== */
+
+.headlines {
+
+	/* 	
+		module-level styling
+		only font-size is specified at module level
+		and everything below it is relative to it
+	*/
+	
+	font-size:					$headlines-base-font-size;
+
+	/* 	
+		element-level styling
+		relative to module font-size
+	*/
+
+	&__titlebar {
+
+		/* title subclass overrides */
+	}
+
+	&__teaser { 
+
+		/* teaser subclass overrides */
+		/*font-size: .88em;*/
+
+	}
+
+	&__tags {
+
+		/* more link subclass overrides */
+	}
+}
+
+/* ==================================================================
+## Debug
+===================================================================== */	
+
+/*.headlines {
+
+	border: 1px solid red;	
+	
+	&__title 	{	background: #e5e5e5;	}
+	&__headline	{	background: #e5e5e5;	}
+	&__more 	{	background: lightgrey;	}
+
+}*/
