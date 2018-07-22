@@ -1,9 +1,7 @@
 <template>
   <div>
     <full-page :options="options">
-      <div class="section">
-        First section ...
-      </div>
+      <guessing></guessing>
       <seaside></seaside>
     </full-page>
   </div>
@@ -12,11 +10,15 @@
 <script>
 import FullPage from '../../node_modules/vue-fullpage.js/src/FullPage'
 import Seaside from './Seaside'
+import GuessingGame from './GuessingGame'
+import BaseGrid from './BaseGrid.vue'
 
 export default {
   components: {
     FullPage,
     'seaside': Seaside,
+    'guessing': GuessingGame,
+    'basegrid': BaseGrid
   },
 
   data() {
@@ -24,7 +26,7 @@ export default {
       options: {
         css3: false,
         scrollingSpeed: 700,
-        autoScrolling: false,
+        autoScrolling: true, // set to false to disable vertical flipping thrh sections
         fitToSection: false,
         // fitToSectionDelay: 1000,
         scrollBar: false,

@@ -1,16 +1,20 @@
 <template>
   <div id="app">
     <main-header></main-header>
+    <basegrid></basegrid>
     <router-view/>
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
+import BaseGrid from './components/BaseGrid.vue'
+
 export default {
   name: 'App',
   components: {
-    'main-header': Header
+    'main-header': Header,
+    'basegrid': BaseGrid
   }
 }
 </script>

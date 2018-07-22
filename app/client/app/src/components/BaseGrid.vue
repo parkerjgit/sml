@@ -19,6 +19,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .grid {
+  position: fixed;
+  top: 0;
+  right: 0;
   display: grid;
   grid-template-columns: repeat(24, 1fr);
   grid-template-rows: repeat(12, 1fr);
